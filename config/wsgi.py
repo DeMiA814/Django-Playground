@@ -1,5 +1,5 @@
 """
-WSGI config for config project.
+WSGI config for django_app project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 
 import os
 
-from dj_static import Cling #文を新しく記述する
+from dj_static import Cling
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "[プロジェクト名].settings")
 
-application = Cling(get_wsgi_application()) #文を変更する
+application = Cling(get_wsgi_application())
