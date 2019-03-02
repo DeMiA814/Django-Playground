@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+
+</head>
+<body>
+    <p>product</p>
+    <p>{{ product.product }}</p>
+    <p>{{ product.price }}円</p>
+    <p>{{ product.description }}</p>
+    
+
+<br>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="button_1" value="カートへ入れる"><br>
+</form>
+<a href="/ecom/">商品一覧へ</a>
+<a href="pay.html">決済へ</a>
+</body>
+</html>
+
+
