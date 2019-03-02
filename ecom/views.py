@@ -12,7 +12,6 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required
 def index(request):
     products = Item.objects.all()
     params = {
@@ -35,7 +34,6 @@ def authentication(request):
         return redirect('views.index')
     form.add_error(None, '入力内容が違います。')
 
-@login_required
 def product(request):
     cart = get_cart()
     number = 0
@@ -55,7 +53,6 @@ def product(request):
 
     return render(request, 'ecom/product.html', params)
 
-@login_required
 def pay(request):
     items_in_cart = Item.objects.exclude(in_cart=0)
     total_price = 0
