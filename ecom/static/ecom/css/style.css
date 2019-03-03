@@ -12,4 +12,5 @@ canvas {
     background-image: url('../../static/ecom/img/albert-einstein-219675_1280.jpg');
 }
 
-
+#three-container{position:relative;}
+.contets-0{position:absolute;}
