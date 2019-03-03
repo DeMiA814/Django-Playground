@@ -429,3 +429,7 @@ function createTweenScrubber(tween, seekSpeed) {
     e.preventDefault();
   });
 }
+
+var canvas = document.getElementById("canvas");
+canvas.width  = 480;
+canvas.height = 320;
