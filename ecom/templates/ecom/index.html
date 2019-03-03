@@ -14,7 +14,7 @@
 </head>
 <body>
    <div id="three-container" class="wrapper">
-       <canvas id="canvas">
+       <canvas id="canvas"></canvas>
    <div class="contents-0">
     <p>index</p>
     {% for product in products %}
@@ -26,7 +26,6 @@
     {% endfor %}
     <a href="{% url 'pay' %}">決済へ</p>
    </div>
-       </canvas>
    </div>
        <!--
     <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
