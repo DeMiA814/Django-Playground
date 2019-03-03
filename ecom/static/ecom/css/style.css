@@ -9,8 +9,7 @@ body {
 }
 
 canvas {
-    background-image: radial-gradient(#666, #333);
+    background-image: url('../../static/ecom/img/albert-einstein-219675_1280.jpg');
 }
 
-#canvas { position:fixed; top:0; left:0; width:5%; height:5%; z-index:1 ;}
-#body   { position:absolute; top:0; left:0; z-index:2 ;}
+
