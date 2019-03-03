@@ -8,7 +8,7 @@ body {
 }
 
 canvas {
-    background-image: radial-gradient(#666, #333);
+    background-image: radial-gradient(#d65050, #333);
 }
 
 #canvas { position:fixed; top:0; left:0; width:5%; height:5%; overflow:hidden; }
