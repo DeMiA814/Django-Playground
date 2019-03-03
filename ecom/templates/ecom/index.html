@@ -4,6 +4,7 @@
     <img src="{% static "ecom/img/albert-einstein-219675_1280.jpg" %}" alt="My image"/>
     <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />
+    <script type="text/javascript" src="ecom/js/hoge.js"></script>
 </head>
 <body>
     <p>index</p>
@@ -15,9 +16,5 @@
     <br>
     {% endfor %}
     <a href="{% url 'pay' %}">決済へ</p>
-
-    <script>
-        document.write('hello World');
-    </script>
 </body>
 </html>
