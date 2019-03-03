@@ -431,5 +431,5 @@ function createTweenScrubber(tween, seekSpeed) {
 }
 
 var canvas = document.getElementById("canvas");
-canvas.width  = 48;
-canvas.height = 32;
+canvas.width  = 480;
+canvas.height = 320;
