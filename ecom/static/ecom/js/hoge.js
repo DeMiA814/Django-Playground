@@ -430,10 +430,6 @@ function createTweenScrubber(tween, seekSpeed) {
   });
 }
 
-var canvas = document.getElementById("canvas");
-canvas.width  = 480;
-canvas.height = 320;
-
 var w = $('.wrapper').width();
 var h = $('.wrapper').height();
 $('#canvas').attr('width', w);
