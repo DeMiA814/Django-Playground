@@ -18,7 +18,7 @@ function init() {
   var slide = new Slide(width, height, 'out');
     var l1 = new THREE.ImageLoader();
     l1.setCrossOrigin('Anonymous');
-    l1.load('ecom/img/albert-einstein-219675_1280.jpg', function(img) {
+    l1.load('../../static/ecom/img/%E4%BB%99%E5%8F%B0%EF%BC%88%E5%B9%B3%E6%88%90%EF%BC%89%E5%B7%A6%E4%B8%8B.jpg', function(img) {
       slide.setImage(img);
     })
   root.scene.add(slide);
@@ -26,7 +26,7 @@ function init() {
   var slide2 = new Slide(width, height, 'in');
   var l2 = new THREE.ImageLoader();
     l2.setCrossOrigin('Anonymous');
-    l2.load('ecom/img/albert-einstein-219675_1280.jpg', function(img) {
+    l2.load('../../static/ecom/img/%E4%BB%99%E5%8F%B0%EF%BC%88%E5%B9%B3%E6%88%90%EF%BC%89%E5%B7%A6%E4%B8%8B.jpg', function(img) {
         slide2.setImage(img);
     })
     
