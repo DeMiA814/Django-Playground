@@ -5,12 +5,11 @@ p {
 
 body {
     margin: 0;
-    overflow: hidden;
 }
 
 canvas {
     background-image: radial-gradient(#666, #333);
 }
 
-#canvas { position:fixed;    top:0; left:0; width:5%; height:5%; }
+#canvas { position:fixed; top:0; left:0; width:5%; height:5%; overflow:hidden; }
 #body   { position:absolute; top:0; left:0; }
