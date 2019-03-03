@@ -6,7 +6,9 @@
           href="{% static 'ecom/css/style.css' %}" />
 </head>
 <body>
-    <p>index</p>
+  <canvas id="canvas"></canvas>
+  <section id="body>
+   <p>index</p>
     {% for product in products %}
     <tr>
       <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
@@ -26,6 +28,6 @@
     
     
     <div id="three-container" align="center"></div>
-    
+  </section>
 </body>
 </html>
