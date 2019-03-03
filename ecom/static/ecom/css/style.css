@@ -12,13 +12,5 @@ canvas {
     background-image: radial-gradient(#666, #333);
 }
 
-#instructions {
-    position: absolute;
-    color: #fff;
-    bottom: 0;
-    padding-bottom: 6px;
-    font-family: sans-serif;
-    width: 100%;
-    text-align: center;
-    pointer-events: none;
-}
+#canvas { position:fixed;    top:0; left:0; width:100%; height:100%; }
+#body   { position:absolute; top:0; left:0; }
