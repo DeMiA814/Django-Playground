@@ -16,17 +16,17 @@ function init() {
   var height = 60;
 
   var slide = new Slide(width, height, 'out');
-    var l1 = new THREE.TextureLoader();
+    var l1 = new THREE.ImageLoader();
     l1.setCrossOrigin('Anonymous');
-    l1.load('../img/albert-einstein-219675_1280.jpg', function(img) {
+    l1.load('ecom/img/albert-einstein-219675_1280.jpg', function(img) {
       slide.setImage(img);
     })
   root.scene.add(slide);
 
   var slide2 = new Slide(width, height, 'in');
-  var l2 = new THREE.TextureLoader();
+  var l2 = new THREE.ImageLoader();
     l2.setCrossOrigin('Anonymous');
-    l2.load('../img/albert-einstein-219675_1280.jpg', function(img) {
+    l2.load('ecom/img/albert-einstein-219675_1280.jpg', function(img) {
         slide2.setImage(img);
     })
     
