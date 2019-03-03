@@ -13,7 +13,7 @@
     <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
 </head>
 <body>
-   <div id="three-container" align="center"></div>
+   <div id="three-container" align="center">
    <div class="contents-0">
     <p>index</p>
     {% for product in products %}
@@ -25,7 +25,8 @@
     {% endfor %}
     <a href="{% url 'pay' %}">決済へ</p>
    </div>
-    <!--
+   </div>
+       <!--
     <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
