@@ -12,5 +12,5 @@ body {
   height: 100%;
 }
 
-#three-container{position:relative;}
-.contents-0{position:absolute;}
+#contents-0{position:relative;}
+.three-container{position:absolute;}
