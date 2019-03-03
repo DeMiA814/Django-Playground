@@ -2,28 +2,3 @@ p {
   color:red;
   font-size:100pt;
 }
-
-body {
-    margin: 0;
-    overflow: hidden;
-}
-
-canvas {
-    background-image: radial-gradient(#666, #333);
-}
-
-body {
-  font-size: 0;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-body {
-  background: url(data:image/jpeg;base64,/ecom/img/albert-einstein-219675_1280.jpg==) 0 0 / cover;
-}
-
-img {
-  display: none;
-}
