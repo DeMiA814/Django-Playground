@@ -430,7 +430,5 @@ function createTweenScrubber(tween, seekSpeed) {
   });
 }
 
-var w = $('.wrapper').width();
-var h = $('.wrapper').height();
-$('#canvas').attr('width', w);
-$('#canvas').attr('height', h);
+$('#canvas').attr('width', 100%);
+$('#canvas').attr('height', 100%);
