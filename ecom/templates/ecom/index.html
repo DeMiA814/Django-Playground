@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="ja">
 <head>{% load static %}
-    <img src="{% static "/ecom/img/albert-einstein-219675_1280.jpg" %}" alt="My image"/>
+    <img src="{% static "ecom/img/albert-einstein-219675_1280.jpg" %}" alt="My image"/>
     <link rel="stylesheet" type ="text/css"
-          href="{% static '/ecom/css/style.css' %}" />
+          href="{% static 'ecom/css/style.css' %}" />
 </head>
 <body>
     <p>index</p>
@@ -17,6 +17,6 @@
     <a href="{% url 'pay' %}">決済へ</p>
    
     <div id="three-container"></div>
-    <script type="text/javascript" src="{% static '/ecom/js/hoge.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
 </body>
 </html>
