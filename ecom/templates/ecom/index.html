@@ -16,8 +16,9 @@
    
    <div id="three-container" class="wrapper">
    <div class="contents-0">
-       <p>index</p>
-       <canvas id="canvas"></canvas>
+       <p>index
+           <canvas id="canvas"></canvas>
+       </p>
     {% for product in products %}
     <tr>
       <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
