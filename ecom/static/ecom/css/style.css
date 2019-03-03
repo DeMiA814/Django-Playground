@@ -13,3 +13,8 @@ canvas {
 
 #canvas { position:fixed; top:0; left:0; width:5%; height:5%; overflow:hidden; }
 #body   { position:absolute; top:0; left:0; }
+
+element.style {
+    width: 700px;
+    height: 1500px;
+}
