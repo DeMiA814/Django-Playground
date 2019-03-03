@@ -18,7 +18,7 @@ function init() {
   var slide = new Slide(width, height, 'out');
     var l1 = new THREE.ImageLoader();
     l1.setCrossOrigin('Anonymous');
-    l1.load('../img/albert-einstein-219675_1280.jpg', function(img) {
+    l1.load('https://cdn.pixabay.com/photo/2017/08/02/13/09/confetti-2571539_1280.jpg', function(img) {
       slide.setImage(img);
     })
   root.scene.add(slide);
@@ -26,7 +26,7 @@ function init() {
   var slide2 = new Slide(width, height, 'in');
   var l2 = new THREE.ImageLoader();
     l2.setCrossOrigin('Anonymous');
-    l2.load('../img/albert-einstein-219675_1280.jpg', function(img) {
+    l2.load('https://cdn.pixabay.com/photo/2015/04/20/13/18/golden-gate-bridge-731207_1280.jpg', function(img) {
         slide2.setImage(img);
     })
     
