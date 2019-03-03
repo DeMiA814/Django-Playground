@@ -430,13 +430,6 @@ function createTweenScrubber(tween, seekSpeed) {
   });
 }
 
-$(function(){
-  $('#button').click(function(){
-    var nanme = $('#name').val();
-    alert('こんにちは、'+ name + 'さん!');
-  });
-});
-
 var w = $('.wrapper').width();
 var h = $('.wrapper').height();
 $('#canvas').attr('width', w);
