@@ -9,7 +9,7 @@ body {
 }
 
 canvas {
-    background-image: url('../../static/ecom/img/albert-einstein-219675_1280.jpg');
+    background-image: url('../static/ecom/img/albert-einstein-219675_1280.jpg');
 }
 
 .wrapper{
