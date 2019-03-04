@@ -3,9 +3,9 @@
 
 body{font-family:"Yu Gothic","Meiryo";}
 header{
-  position: fixed;            /* ヘッダーの固定 */
   top: 0px;                   /* 位置(上0px) */
 }
+svg{position:fixed;}
 header a {
     position: absolute;
     top: 28px;
