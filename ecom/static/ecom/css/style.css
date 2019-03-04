@@ -1,7 +1,7 @@
 #three-container{position:relative;}
 .contents-0{position:absolute; width: 100%;}
 
-.index-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 1%;}
+.index-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 1%;text-align: center;}
 .index-table a {font-size: 40px;}
 .index-table {font-size: 30px;}
 .index-table img {height:300px;}
