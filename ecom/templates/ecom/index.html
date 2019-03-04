@@ -15,20 +15,6 @@
     <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
 </head>
-<body>
-   <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">
-   <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
-    {% for product in products %}
-   <div class="index-table">
-      <img src="{{ product.picture }}">
-      <br>
-      <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
-      <span>{{ product.price }}円</span><br>
-   </div>
-    {% endfor %}
-   <br>
-    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
-</body>
 <svg viewbox="0 0 100 20">
   <defs>
     <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
@@ -48,7 +34,21 @@
       </path>
     </pattern>
   </defs>
-  <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="0.6">LOADING</text>
-  <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.1">LOADING</text>
+  <text text-anchor="middle" x="50" y="15" font-size="38" fill="url(#wave)"  fill-opacity="0.6">DeMiON</text>
+  <text text-anchor="middle" x="50" y="15" font-size="38" fill="url(#gradient)" fill-opacity="0.1">DeMiON</text>
 </svg>
+<body>
+   <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">
+   <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
+    {% for product in products %}
+   <div class="index-table">
+      <img src="{{ product.picture }}">
+      <br>
+      <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
+      <span>{{ product.price }}円</span><br>
+   </div>
+    {% endfor %}
+   <br>
+    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
+</body>
 </html>
