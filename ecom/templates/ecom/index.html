@@ -14,8 +14,13 @@
     <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
- <svg viewbox="0 0 100 20">
-  <defs>
+</head>
+<body>
+   <!--
+   <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">-->
+   <div class="header">
+     <svg viewbox="0 0 100 20">
+   <defs>
     <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
       <stop offset="5%" stop-color="#326384"/>
       <stop offset="95%" stop-color="#123752"/>
@@ -36,11 +41,6 @@
   <text text-anchor="middle" x="50" y="15" font-size="24" fill="url(#wave)"  fill-opacity="0.6">DeMiON</text>
   <text text-anchor="middle" x="50" y="15" font-size="24" fill="url(#gradient)" fill-opacity="0.1">DeMiON</text>
 </svg>
-</head>
-<body>
-   <!--
-   <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">-->
-   <div class="header">
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
    </div>
     {% for product in products %}
