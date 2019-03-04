@@ -19,7 +19,7 @@
        <p>index
            <canvas id="canvas"></canvas>
        </p>
-   <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
+   <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
     <tr>
       <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
