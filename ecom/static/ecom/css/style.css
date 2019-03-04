@@ -7,8 +7,9 @@
 #three-container{position:relative;}
 .contents-0{position:absolute;}
 
-
+.product-table {float:left;}
 .product-table a {font-size: 40px;}
+.product-table img {height:300px;}
 
 /*product.html*/
 /*決済ボタン*/
