@@ -9,7 +9,7 @@ header a {
     bottom: 0%;
     right: 0;}
 
-.index-main-tables {margin-bottom: 130px;}
+.index-main-tables {margin-bottom: 130px;overflow: hidden;}
 .index-table {float:left;width:30%;border: solid 5px #dfdfdf;;margin: 20px 1%;text-align: center;}
 .index-table a {font-size: 40px;}
 .index-table {font-size: 30px;}
