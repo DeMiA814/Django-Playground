@@ -7,6 +7,9 @@
 #three-container{position:relative;}
 .contents-0{position:absolute;}
 
+
+product-table a {font-size: 40px;}
+
 /*product.html*/
 /*決済ボタン*/
 .btn-square-shadow {
@@ -17,6 +20,7 @@
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
+  margin-bottom: 50px;
 }
 .btn-square-shadow:active {
   /*ボタンを押したとき*/
