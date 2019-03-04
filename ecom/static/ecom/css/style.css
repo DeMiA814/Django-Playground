@@ -23,7 +23,7 @@ input[type="submit"] {
   display: block;
   text-align: center;
   font-size: 20px;
-  width: 100px;
+  width: 200px;
   padding: 0.5em 1em;
   text-decoration: none;
   background: #668ad8;/*ボタン色*/
@@ -52,7 +52,7 @@ input[type="submit"]:active {
   display: block;
   text-align: center;
   font-size: 20px;
-  width: 100px;
+  width: 200px;
   padding: 0.5em 1em;
   text-decoration: none;
   background: #668ad8;/*ボタン色*/
