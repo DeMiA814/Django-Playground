@@ -18,11 +18,11 @@
 <body>
    
    <div id="three-container" class="wrapper">
-   <div class="contents-0">
+       <div class="contents-0">
        
-   <div id="container"></div>
-
-    <script type="x-shader/x-vertex" id="vertexShader">
+           <div id="container"></div>
+    
+       <script type="x-shader/x-vertex" id="vertexShader">
         uniform float amplitude;
         attribute vec3 vertexColor;
         varying vec4 varColor;
@@ -35,33 +35,32 @@
         gl_PointSize = 1.0;
         gl_Position = projectionMatrix * mvPosition;
         }
-    </script>
-
-    <script type="x-shader/x-fragment" id="fragmentShader">
+       </script>
+       
+       <script type="x-shader/x-fragment" id="fragmentShader">
         varying vec4 varColor;
         void main()
         {
         gl_FragColor = varColor;
         }
-    </script>
+       </script>
         
-   <p>index
-        <canvas id="canvas"></canvas>
-   </p>
-   <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
-    {% for product in products %}
-    <tr>
-      <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
-      <td>{{ product.price }}円</td><br>
-      <td><img src="{{ product.picture }}"></td><br>
-    </tr>
-    <br>
-    {% endfor %}
-    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
-
-
-   </div>
-   </div>
+       <p>index
+           <canvas id="canvas"></canvas>
+       </p>
+       
+       <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
+       {% for product in products %}
+       <tr>
+           <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
+           <td>{{ product.price }}円</td><br>
+           <td><img src="{{ product.picture }}"></td><br>
+       </tr>
+       <br>
+       {% endfor %}
+       <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
+       </div>
+    </div>
     
     
 </body>
