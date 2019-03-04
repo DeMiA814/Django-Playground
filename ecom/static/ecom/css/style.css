@@ -2,13 +2,16 @@
 .contents-0{position:absolute; width: 100%;}
 
 body{font-family:"Yu Gothic","Meiryo";}
-.header{position: relative;}
+.header{
+  position: fixed;            /* ヘッダーの固定 */
+  top: 0px;                   /* 位置(上0px) */
+}
 .header a {position: absolute;top: 0;left: 63%;}
 
-.index-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 1%;text-align: center;}
+.index-table {float:left;width:30%;border: solid 5px #dfdfdf;;margin: 20px 1%;text-align: center;}
 .index-table a {font-size: 40px;}
 .index-table {font-size: 30px;}
-.index-table img {height:300px;}
+.index-table img {height:300px;margin-top: 20px;}
 
 .product-body{margin-left: 10%;margin-top: 50px;}
 .product-img{width:30%;float: left;}
