@@ -52,3 +52,9 @@ form{margin-left:30px;}
 body {
   margin: 0;
 }
+
+img_size {
+  width: 100px;
+  height: 100px;
+  background: orange;
+  
