@@ -6,12 +6,12 @@
 .index-table {font-size: 30px;}
 .index-table img {height:300px;}
 
-.product-img{width:300px;float: left;}
-.product-contents{float:left;}
+.product-img{width:30%;float: left;}
+.product-contents{width:30%;float:left;}
 .product-name {font-size:50px;}
 .product-price {font-size:30px;}
 .product-text {font-size:30px;}
-.product-form{clear:both;}
+.product-form{width:25%;float:left;}
 
 .pay-cart{font-size: 25px;}
 .pay-money{font-size: 25px;}
