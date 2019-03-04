@@ -20,7 +20,7 @@
 .product-form{clear:both;}
 
 .pay-cart{font-size: 25px;}
-.pay-money{font-size: 25px;}
+.pay-money{font-size: 25px;width: 300px !important;}
 
 /*product.html*/
 /*決済ボタン*/
@@ -35,8 +35,7 @@
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  margin-bottom: 50px;
-  margin-left: 50px;
+  margin: 50px;
   clear:both;
 }
 .btn-square-shadow:active {
