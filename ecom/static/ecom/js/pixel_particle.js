@@ -7,8 +7,8 @@ var shaderUniforms, shaderAttributes;
 var particles = [];
 var particleSystem;
 
-var imageWidth = 64;
-var imageHeight = 36;
+var imageWidth = 640;
+var imageHeight = 360;
 var imageData = null;
 
 var animationTime = 0;
