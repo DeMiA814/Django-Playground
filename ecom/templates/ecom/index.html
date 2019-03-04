@@ -16,27 +16,29 @@
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
 </head>
 <body>
-   
-   <div id="three-container" class="wrapper">
-       <div class="contents-0">
-   
    <img class="heder-img" src="{% static 'ecom/img/book-863418_1920.jpg' %}" style="width: 100%;">
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
-    <div class="index-table">
+   <div class="index-table">
       <div id="container" class="img_size">
+           <canvas id="canvas"></canvas>
            <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
            <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
            <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
-           </div><br>
+          <script>
+             var w = $('.img_size').width();
+             var h = $('.img_size').height();
+             $('#canvas').attr('width', w);
+             $('#canvas').attr('height', h);
+          </script>
+      </div>
+      <br>
       <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
       <span>{{ product.price }}円</span><br>
-    </div>
-    {% endfor %}
-    <br>
-    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
    </div>
-    </div>
+    {% endfor %}
+   <br>
+    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
     <script type="x-shader/x-vertex" id="vertexShader">
         uniform float amplitude;
         attribute vec3 vertexColor;
@@ -50,16 +52,13 @@
         gl_PointSize = 1.0;
         gl_Position = projectionMatrix * mvPosition;
         }
-       </script>
-       
-       <script type="x-shader/x-fragment" id="fragmentShader">
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentShader">
         varying vec4 varColor;
         void main()
         {
         gl_FragColor = varColor;
         }
-       </script>
-    
-    
+    </script>
 </body>
 </html>
