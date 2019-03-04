@@ -105,14 +105,3 @@ svg{font-weight:bold;height:auto;}
  background: url('poster.jpg') no-repeat;
  background-size: cover;
 }
-/* ----- 背景の上に表示させたいコンテンツ ----- */
-.header-title{
- position: relative; /*必ず必要*/
- z-index: 2; /*必ず必要*/
- display: flex;
- width: 50%;
- justify-content: center;
- align-items: center;
- text-align:center;
- margin: auto;
-}
