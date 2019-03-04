@@ -60,7 +60,7 @@
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
     <tr>
-      <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
+      <td><a href="{% url 'product' %}?product={{ product.product }}" class="index-a">{{ product.product }}</a></td><br>
       <td>{{ product.price }}円</td><br>
       <td><img src="{{ product.picture }}"></td><br>
     </tr>
