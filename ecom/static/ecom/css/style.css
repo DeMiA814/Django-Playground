@@ -95,9 +95,10 @@ svg{font-weight:bold;height:auto;}
 
 /* ----- 背景用の動画ファイル ----- */
 #bg-video{
+ transform: translateX(-50%);
  position: fixed;
- right: 0;
- bottom: 0;
+ left: 50%;
+ bottom: 0%;
  min-width: 100%;
  min-height: 100%;
  width: auto;
