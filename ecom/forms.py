@@ -1,7 +1,7 @@
 from django import forms
 
 class Product_form(forms.Form):
-    number = forms.IntegerField(label="number")
+    number = forms.IntegerField(label="個数")
 
 class Login_form(forms.Form):
     name = forms.CharField(label="name")
