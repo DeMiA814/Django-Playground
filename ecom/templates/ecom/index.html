@@ -18,7 +18,6 @@
 <body>
    <!--
    <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">-->
-  <div class="wrap">
   <video id="bg-video" src="../static/ecom/img/christophpantelslowmotiondropmp4.mp4" poster="../static/ecom/img/christophpantelslowmotiondropmp4.jpg" autoplay loop></video>
   <header background-color:#e6e6fa>
      <svg viewbox="0 0 100 20">
@@ -44,7 +43,7 @@
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeMi-ON</text>
    </svg>
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
-      </header></div>
+      </header>
     {% for product in products %}
    <div class="index-table">
       <img src="{{ product.picture }}">
