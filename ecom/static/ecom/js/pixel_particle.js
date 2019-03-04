@@ -14,13 +14,12 @@ var imageData = null;
 var animationTime = 0;
 var animationDelta = 0.03;
 
-$(function init1() {
-  createScene();
-  createControls();
-  createPixelData();
+createScene();
+createControls();
+createPixelData();
 
-  window.addEventListener('resize', onWindowResize, false);
-});
+window.addEventListener('resize', onWindowResize, false);
+
 
 $(function createScene() {
   container = document.getElementById('container');
