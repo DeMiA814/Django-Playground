@@ -3,9 +3,6 @@
 
 body{font-family:"Yu Gothic","Meiryo";}
 header{height: 10%;}
-@media screen and (min-width:600px){
-header{height: 30%;}
-}
 svg{position:fixed;z-index: -1;}
 header a {
     position: fixed;
