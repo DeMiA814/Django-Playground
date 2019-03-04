@@ -10,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script type="text/javascript" src="{% static 'ecom/js/bas.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/OrbitControls-2.js' %}"></script>
-    <!--<script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>-->
     <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
@@ -46,7 +45,6 @@
     </script>
         
    <p>index
-        <canvas id="canvas"></canvas>
    </p>
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
