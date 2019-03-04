@@ -77,7 +77,7 @@ function createPixelData() {
     tick();
   };
   
-  image.src ="{{ product.picture }}";
+  image.src ="https://images-na.ssl-images-amazon.com/images/I/81olaORXrAL._SY445_.jpg";
 }
 
 function createPaticles() {
