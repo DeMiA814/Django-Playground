@@ -14,7 +14,18 @@ var imageData = null;
 var animationTime = 0;
 var animationDelta = 0.03;
 
-createScene();
+container = document.getElementById('container');
+scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 10000);
+camera.position.z = 3000;
+camera.lookAt(scene.position)
+renderer = new THREE.WebGLRenderer({
+  antialias: true
+});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000, 1);
+container.appendChild(renderer.domElement);
+
 createControls();
 createPixelData();
 
