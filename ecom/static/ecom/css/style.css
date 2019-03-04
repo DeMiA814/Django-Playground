@@ -3,7 +3,7 @@
 
 body{font-family:"Yu Gothic","Meiryo";}
 header{height: 30%;}
-svg{position:fixed;}
+svg{position:fixed;z-index: -1;}
 header a {
     position: fixed;
     bottom: 0%;
