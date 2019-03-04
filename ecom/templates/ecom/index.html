@@ -18,6 +18,8 @@
 <body>
    <!--
    <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">-->
+  <div class="wrap">
+  <video id="bg-video" src="christophpantelslowmotiondropmp4.mp4" poster="christophpantelslowmotiondropmp4.jpg" autoplay loop></video>
   <header background-color:#e6e6fa>
      <svg viewbox="0 0 100 20">
    <defs>
@@ -43,6 +45,7 @@
    </svg>
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
    </header>
+   <div class="header-title">
     {% for product in products %}
    <div class="index-table">
       <img src="{{ product.picture }}">
