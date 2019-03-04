@@ -8,20 +8,20 @@
 </head>
 <body>
     <p>pay</p>
-    <p>あなたがカートに入れた商品は</p>
+    <p class="anataga">あなたがカートに入れた商品は</p>
     {% for item in items %}
-    <p>＞＞{{ item.product }} {{ item.in_cart }}本</p>
+    <p class="pay-cart">＞＞{{ item.product }} {{ item.in_cart }}本</p>
     {% endfor %}
-    <p>合計金額は</p>
-    <p>＞＞{{ cart.money }}円</p>
-    <p>です。</p><br>
+    <p class="goukei">合計金額は</p>
+    <p class="pay-money">＞＞{{ cart.money }}円</p>
+    <p class="desu">です。</p><br>
     <form method="post">
         {% csrf_token %}
-        <input type="submit" name="button_2" value="決済する"><br>
+        <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する"><br>
     </form>
     {% for message in messages %}
     <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
     {% endfor %}
-    <a href="/ecom/">まだ買い物を続ける</a>
+    <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
 </body>
 </html>
