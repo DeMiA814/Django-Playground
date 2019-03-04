@@ -2,6 +2,7 @@
 .contents-0{position:absolute; width: 100%;}
 
 body{font-family:"Yu Gothic","Meiryo";}
+.header{position: fixed;}
 
 .index-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 1%;text-align: center;}
 .index-table a {font-size: 40px;}
