@@ -53,8 +53,7 @@ body {
   margin: 0;
 }
 
-/*.img_size {
-  width: 100px;
-  height: 100px;
-  background: orange;*/
-  
+.img_size {
+  width: 50%;
+  height: 50%;
+}
