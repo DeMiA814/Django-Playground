@@ -4,30 +4,34 @@
 <head>
     <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />
-</head>
-<body>
-  <canvas id="canvas"></canvas>
-  <section id="body>
-   <p>index</p>
-    {% for product in products %}
-    <tr>
-      <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
-      <td>{{ product.price }}円</td><br>
-    </tr>
-    <br>
-    {% endfor %}
-    <a href="{% url 'pay' %}">決済へ</a>
-    
-    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ecom/js/jquery-3.3.1.min.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script type="text/javascript" src="{% static 'ecom/js/bas.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/OrbitControls-2.js' %}"></script>
-    <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
+    <!--<script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>-->
+</head>
+<body>
+   
+   <div id="three-container" class="wrapper">
+   <div class="contents-0">
+       <p>index
+           <canvas id="canvas"></canvas>
+       </p>
+   <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
+    {% for product in products %}
+    <tr>
+      <td><a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a></td><br>
+      <td>{{ product.price }}円</td><br>
+      <td><img src="{{ product.picture }}"></td><br>
+    </tr>
+    <br>
+    {% endfor %}
+    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
+   </div>
+   </div>
     
     
-    <div id="three-container" align="center"></div>
-  </section>
 </body>
 </html>
