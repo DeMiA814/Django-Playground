@@ -3,6 +3,7 @@
 
 body{font-family:"Yu Gothic","Meiryo";}
 .header{position: fixed;}
+.header a {position: absolute;top: 0;left: 63%;}
 
 .index-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 1%;text-align: center;}
 .index-table a {font-size: 40px;}
