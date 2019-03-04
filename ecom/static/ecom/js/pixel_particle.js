@@ -77,7 +77,7 @@ function createPixelData() {
     tick();
   };
   
-  image.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/tree_star.jpg";
+  image.src = "../static/ecom/img/book-863418_1920.jpg";
 }
 
 function createPaticles() {
