@@ -9,10 +9,11 @@
 <body>
     <p>product</p>
     <a href="pay.html" class="btn-square-shadow">決済へ</a>
-    <p><img src="{{ product.picture }}"></p>
-    <p>{{ product.product }}</p>
-    <p>{{ product.price }}円</p>
-    <p>{{ product.description }}</p>
+    <p class="product-img"><img src="{{ product.picture }}"></p>
+    <div class="product-contents">
+    <p class="product-name">{{ product.product }}</p>
+    <p class="product-price">{{ product.price }}円</p>
+    <p class="product-text">{{ product.description }}</p>
     
 
 <br>
