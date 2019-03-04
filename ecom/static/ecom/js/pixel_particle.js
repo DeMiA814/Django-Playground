@@ -77,7 +77,7 @@ function createPixelData() {
     tick();
   };
   
-  image.src = "../static/ecom/img/book-863418_1920.jpg";
+  image.src ="{{ product.picture }}";
 }
 
 function createPaticles() {
