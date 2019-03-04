@@ -13,6 +13,9 @@
 
 .product-img{width:300px;float: left;}
 .product-contents{float:left;}
+.product-name {font-size:50px;}
+.product-price {font-size:30px;}
+.product-text {font-size:30px;}
 
 .product-form{clear:both;}
 
