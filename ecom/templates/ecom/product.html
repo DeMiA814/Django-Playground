@@ -17,12 +17,14 @@
     
 
 <br>
+<div class="product-form">
 <form method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" name="button_1" value="カートへ入れる"><br>
 </form>
 <a href="/ecom/" class="btn-square-shadow">商品一覧へ</a>
+</div>
 </body>
 </html>
 
