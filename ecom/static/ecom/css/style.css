@@ -7,7 +7,7 @@
 #three-container{position:relative;}
 .contents-0{position:absolute;}
 
-.product-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 4%;}
+.product-table {float:left;width:30%;border: solid 2px #000000;margin: 20px 1%;}
 .product-table a {font-size: 40px;}
 .product-table img {height:300px;}
 
@@ -22,6 +22,7 @@
   border-bottom: solid 4px #627295;
   border-radius: 3px;
   margin-bottom: 50px;
+  clear:both;
 }
 .btn-square-shadow:active {
   /*ボタンを押したとき*/
