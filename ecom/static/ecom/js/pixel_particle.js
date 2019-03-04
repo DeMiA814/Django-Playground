@@ -14,9 +14,6 @@ var imageData = null;
 var animationTime = 0;
 var animationDelta = 0.03;
 
-init();
-// tick();
-
 $(function init() {
   createScene();
   createControls();
@@ -24,6 +21,9 @@ $(function init() {
 
   window.addEventListener('resize', onWindowResize, false);
 });
+
+init();
+// tick();
 
 $(function createScene() {
   container = document.getElementById('container');
