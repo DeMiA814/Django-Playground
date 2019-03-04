@@ -19,18 +19,11 @@
    <img class="heder-img" src="{% static 'ecom/img/book-863418_1920.jpg' %}" style="width: 100%;">
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
-   <div class="index-table">
-      <div id="container" class="img_size">
-           <canvas id="canvas"></canvas>
+   <div class="index-table" style="height:100px">
+      <div id="container">
            <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
            <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
            <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
-          <script>
-             var w = $('.img_size').width();
-             var h = $('.img_size').height();
-             $('#canvas').attr('width', w);
-             $('#canvas').attr('height', h);
-          </script>
       </div>
       <br>
       <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
