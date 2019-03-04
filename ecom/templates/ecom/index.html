@@ -21,9 +21,33 @@
    <div class="contents-0">
        
    <div id="container"></div>
-       <p>index
-           <canvas id="canvas"></canvas>
-        </p>
+
+    <script type="x-shader/x-vertex" id="vertexShader">
+        uniform float amplitude;
+        attribute vec3 vertexColor;
+        varying vec4 varColor;
+        void main()
+        {
+        varColor = vec4(vertexColor, 1.0);
+        vec4 pos = vec4(position, 1.0);
+        pos.z *= amplitude;
+        vec4 mvPosition = modelViewMatrix * pos;
+        gl_PointSize = 1.0;
+        gl_Position = projectionMatrix * mvPosition;
+        }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentShader">
+        varying vec4 varColor;
+        void main()
+        {
+        gl_FragColor = varColor;
+        }
+    </script>
+        
+   <p>index
+        <canvas id="canvas"></canvas>
+   </p>
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
     <tr>
@@ -34,28 +58,7 @@
     <br>
     {% endfor %}
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
-        <script type="x-shader/x-vertex" id="vertexShader">
-            uniform float amplitude;
-            attribute vec3 vertexColor;
-            varying vec4 varColor;
-            void main()
-                {
-                varColor = vec4(vertexColor, 1.0);
-                vec4 pos = vec4(position, 1.0);
-                pos.z *= amplitude;
-                vec4 mvPosition = modelViewMatrix * pos;
-                gl_PointSize = 1.0;
-                gl_Position = projectionMatrix * mvPosition;
-                }
-        </script>
 
-        <script type="x-shader/x-fragment" id="fragmentShader">
-            varying vec4 varColor;
-            void main()
-                {
-                gl_FragColor = varColor;
-                } 
-        </script>
 
    </div>
    </div>
