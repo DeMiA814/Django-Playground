@@ -15,7 +15,9 @@
 /*決済ボタン*/
 .btn-square-shadow {
   display: block;
-  width: 50px;
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
   padding: 0.5em 1em;
   text-decoration: none;
   background: #668ad8;/*ボタン色*/
@@ -23,6 +25,7 @@
   border-bottom: solid 4px #627295;
   border-radius: 3px;
   margin-bottom: 50px;
+  margin-left: 50px
   clear:both;
 }
 .btn-square-shadow:active {
