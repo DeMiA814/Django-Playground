@@ -44,6 +44,7 @@
    </svg>
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
       </header>
+   <div class="index-main-tables">
     {% for product in products %}
    <div class="index-table">
       <img src="{{ product.picture }}">
@@ -52,6 +53,6 @@
       <span>{{ product.price }}円</span><br>
    </div>
     {% endfor %}
-    <br><br><br><br><br>
+   </div>
 </body>
 </html>
