@@ -17,15 +17,15 @@ var animationDelta = 0.03;
 init();
 // tick();
 
-function init() {
+$(function init() {
   createScene();
   createControls();
   createPixelData();
 
   window.addEventListener('resize', onWindowResize, false);
-}
+});
 
-function createScene() {
+$(function createScene() {
   container = document.getElementById('container');
 
   scene = new THREE.Scene();
@@ -41,9 +41,9 @@ function createScene() {
   renderer.setClearColor(0x000000, 1);
 
   container.appendChild(renderer.domElement);
-}
+});
 
-function createControls() {
+$(function createControls() {
   controls = new THREE.TrackballControls(camera);
 
   controls.rotateSpeed = 1.0;
@@ -55,9 +55,9 @@ function createControls() {
 
   controls.staticMoving = true;
   controls.dynamicDampingFactor = 0.3;
-}
+});
 
-function createPixelData() {
+$(function createPixelData() {
   var image = document.createElement("img");
   var canvas = document.createElement("canvas");
   var context = canvas.getContext("2d");
@@ -78,9 +78,9 @@ function createPixelData() {
   };
   
   image.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/tree_star.jpg";
-}
+});
 
-function createPaticles() {
+$(function createPaticles() {
   var colors = [];
   var weights = [0.2126, 0.7152, 0.0722];
   var c = 0;
@@ -146,30 +146,30 @@ function createPaticles() {
   particleSystem = new THREE.ParticleSystem(geometry, shaderMaterial);
 
   scene.add(particleSystem);
-}
+});
 
-function tick() {
+$(function tick() {
   requestAnimationFrame(tick);
 
   update();
   render();
-}
+});
 
-function update() {
+$(function update() {
   shaderUniforms.amplitude.value = Math.sin(animationTime);
 
   animationTime += animationDelta;
 
   controls.update();
-}
+});
 
-function render() {
+$(function render() {
   renderer.render(scene, camera);
-}
+});
 
-function onWindowResize() {
+$(function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 
   renderer.setSize(window.innerWidth, window.innerHeight);
-}
+});
