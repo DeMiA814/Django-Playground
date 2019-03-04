@@ -1,4 +1,3 @@
-{% load static %}
 var container;
 var camera, scene, renderer;
 var controls;
