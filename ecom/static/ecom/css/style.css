@@ -15,7 +15,8 @@ header a {
 .index-table img {height:300px;margin-top: 20px;width: 100%;}
 
 .product-body{margin-left: 10%;margin-top: 50px;}
-.product-img{width:30%;float: left;width: 100%;}
+.product-img{width:30%;float: left;}
+.product-img img {width: 100%;}
 .product-contents{width:30%;float:left;}
 .product-name {font-size:50px;}
 .product-price {font-size:30px;}
