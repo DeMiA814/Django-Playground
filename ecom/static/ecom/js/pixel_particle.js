@@ -14,9 +14,6 @@ var imageData = null;
 var animationTime = 0;
 var animationDelta = 0.03;
 
-init1();
-tick();
-
 $(function init1() {
   createScene();
   createControls();
