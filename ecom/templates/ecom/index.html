@@ -41,10 +41,8 @@
    <text text-anchor="middle" x="50" y="15" font-size="24" fill="url(#wave)"  fill-opacity="0.6">DeMiON</text>
    <text text-anchor="middle" x="50" y="15" font-size="24" fill="url(#gradient)" fill-opacity="0.1">DeMiON</text>
    </svg>
-   </header>
-   <div class="header">
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
-   </div>
+   </header>
     {% for product in products %}
    <div class="index-table">
       <img src="{{ product.picture }}">
