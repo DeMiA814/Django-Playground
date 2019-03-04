@@ -20,11 +20,6 @@
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
    <div class="index-table" style="height:100px">
-      <div id="container">
-           <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
-           <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
-           <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
-      </div>
       <br>
       <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
       <span>{{ product.price }}円</span><br>
@@ -32,26 +27,5 @@
     {% endfor %}
    <br>
     <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a>
-    <script type="x-shader/x-vertex" id="vertexShader">
-        uniform float amplitude;
-        attribute vec3 vertexColor;
-        varying vec4 varColor;
-        void main()
-        {
-        varColor = vec4(vertexColor, 1.0);
-        vec4 pos = vec4(position, 1.0);
-        pos.z *= amplitude;
-        vec4 mvPosition = modelViewMatrix * pos;
-        gl_PointSize = 1.0;
-        gl_Position = projectionMatrix * mvPosition;
-        }
-    </script>
-    <script type="x-shader/x-fragment" id="fragmentShader">
-        varying vec4 varColor;
-        void main()
-        {
-        gl_FragColor = varColor;
-        }
-    </script>
 </body>
 </html>
