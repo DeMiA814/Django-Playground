@@ -20,12 +20,6 @@
    <div id="three-container" class="wrapper">
        <div class="contents-0">
        
-           <div id="container">
-           <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
-           <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
-           <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
-           </div>
-    
        <script type="x-shader/x-vertex" id="vertexShader">
         uniform float amplitude;
         attribute vec3 vertexColor;
@@ -53,7 +47,11 @@
    <a href="{% url 'pay' %}" class="btn-square-shadow">決済へ</a><br>
     {% for product in products %}
     <div class="index-table">
-      <img src="{{ product.picture }}"><br>
+      <div id="container">
+           <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
+           <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
+           <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
+           </div><br>
       <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
       <span>{{ product.price }}円</span><br>
     </div>
