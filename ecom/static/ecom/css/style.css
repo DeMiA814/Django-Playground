@@ -129,6 +129,8 @@ body.pay-body {background-color: #f2f2f2;}
   vertical-align: middle;
   overflow: hidden;
   transition: .6s;
+  background: white;
+  padding-right: 200px;
 }
 
 .btn-circle-border-double:hover {
