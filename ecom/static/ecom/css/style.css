@@ -43,7 +43,6 @@ body.product-body {background-color: #f2f2f2;}
 .product-form form label:before {content: '本数' !important;font-size: 25px !important;margin: 0px 3px;}
 #id_number {vertical-align: inherit;font-size: 26px;height: 39px;height: 50px;width: 76%;background-color:#ffffff !important}
 select#id_number option {font-size: 15px !important;}
-/*
 input[type="submit"] {
   width: 90%; 
   margin-top: 5px;
@@ -65,7 +64,6 @@ input[type="submit"]:active {
   transform: translateY(4px);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
 }
-*/
 .product-contents{clear:both;margin: 50px 10% 0px 10%;}
 .product-name {font-size:50px;font-weight: bold;}
 .product-price {font-size:30px;}
@@ -96,7 +94,6 @@ body.pay-body {background-color: #f2f2f2;}
 
 /*product.html*/
 /*決済ボタン*/
-/*
 .btn-square-shadow {
   display: block;
   text-align: center;
@@ -116,7 +113,6 @@ body.pay-body {background-color: #f2f2f2;}
   transform: translateY(4px);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
 }
-*/
 .btn-circle-border-double {
   display: inline-block;
   text-decoration: none;
