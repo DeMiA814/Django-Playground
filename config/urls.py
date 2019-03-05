@@ -21,4 +21,3 @@ urlpatterns = [
     path('ecom/', include('ecom.urls')),
     path('akademai_sns/', include('akademia_sns.urls')),
 ]
-]
