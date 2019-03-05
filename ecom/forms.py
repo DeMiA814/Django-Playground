@@ -14,7 +14,7 @@ class Product_form(forms.Form):
     ('9', '9'),
     ('10', '10'),
     )
-    number = forms.ChoiceField(label="個数",widget=forms.Select, choices=CHOICE)
+    number = forms.ChoiceField(label="本数",widget=forms.Select, choices=CHOICE)
 
 class Login_form(forms.Form):
     name = forms.CharField(label="name")
