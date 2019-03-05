@@ -40,7 +40,16 @@
     {{ form }}
     </div>
     <p class="product-price">{{ product.price }}円 / 本</p>
-    <input type="submit" name="button_1" value="カートへ入れる"><br>
+    <div class="popup-overlay">
+     <div class="popup-content">
+        <h2>商品をカートに追加しました！</h2>
+        <p> 商品追加ありがとうございます。まだまだお買い物を楽しんでくださいませ！！</p>
+        <button class="close">Close</button>
+     　</div>
+    </div>
+    <input type="submit" name="button_1" value="カートへ入れる" class="open"><br>
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="popup.js"></script>
     </form>
     <a href="pay.html" class="btn-square-shadow">決済へ</a>
     <a href="/ecom/" class="btn-square-shadow">商品一覧へ</a>
