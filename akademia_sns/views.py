@@ -139,7 +139,7 @@ def groups(request):
             'create_form':createform,
             'group':sel_group,
         }
-    return render(request, 'sns/groups.html', params)
+    return render(request, 'akademia_sns/groups.html', params)
 
 # Friendの追加処理
 @login_required(login_url='/admin/login/')
@@ -182,7 +182,7 @@ def creategroup(request):
     gp.title = request.POST['group_name']
     gp.save()
     messages.info(request, '新しいグループを作成しました。')
-    return redirect(to='/sns/groups')
+    return redirect(to='/akademia_sns/groups')
 
 # メッセージのポスト処理
 @login_required(login_url='/admin/login/')
@@ -205,7 +205,7 @@ def post(request):
         msg.save()
         # メッセージを設定
         messages.success(request, '新しいメッセージを投稿しました！')
-        return redirect(to='/sns')
+        return redirect(to='/akademia_sns')
     
     # GETアクセス時の処理
     else:
@@ -216,7 +216,7 @@ def post(request):
             'login_user':request.user,
             'form':form,
         }
-    return render(request, 'sns/post.html', params)
+    return render(request, 'akademia_sns/post.html', params)
 
 # 投稿をシェアする
 @login_required(login_url='/admin/login/')
@@ -246,7 +246,7 @@ def share(request, share_id):
         share_msg.save()
         # メッセージを設定
         messages.success(request, 'メッセージをシェアしました！')
-        return redirect(to='/sns')
+        return redirect(to='/akademia_sns')
     
     # 共通処理
     form = PostForm(request.user)
@@ -255,7 +255,7 @@ def share(request, share_id):
             'form':form,
             'share':share,
         }
-    return render(request, 'sns/share.html', params)
+    return render(request, 'akademia_sns/share.html', params)
 
 # goodボタンの処理
 @login_required(login_url='/admin/login/')
@@ -268,7 +268,7 @@ def good(request, good_id):
     # ゼロより大きければ既にgood済み
     if is_good > 0:
         messages.success(request, '既にメッセージにはGoodしています。')
-        return redirect(to='/sns')
+        return redirect(to='/akademia_sns')
     
     # Messageのgood_countを１増やす
     good_msg.good_count += 1
@@ -280,7 +280,7 @@ def good(request, good_id):
     good.save()
     # メッセージを設定
     messages.success(request, 'メッセージにGoodしました！')
-    return redirect(to='/sns')
+    return redirect(to='/akademia_sns')
 
 # これ以降はビュー関数ではなく普通の関数==================
 
