@@ -21,7 +21,7 @@ header a {
 .product-form{width:30%;float:left;margin: 50px;}
 .product-form form label{font-size: 25px;}
 .product-input {width:240px;}
-#id_number {height:21px;vertical-align: super;height: 39px;width: 160px;}
+#id_number {vertical-align: super;height: 39px;height: 50px;width: 76%;}
 select#id_number option {font-size: 20px !important;}
 input[type="submit"] {
   width: 90%; 
