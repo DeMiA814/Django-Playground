@@ -20,7 +20,8 @@ header a {
 .product-img img {width: 100%;}
 .product-form{width:30%;float:left;margin: 50px;}
 .product-form form label{font-size: 25px;}
-#id_number {height:21px;}
+#id_number {height:21px;vertical-align: super;height: 39px;width: 160px;}
+select#id_number option {font-size: 20px !important;}
 input[type="submit"] {
   width: 90%; 
   margin-top: 5px;
