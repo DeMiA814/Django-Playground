@@ -30,7 +30,7 @@ header a {
 #id_number {vertical-align: super;height: 39px;height: 50px;width: 76%;}
 #id_number:before {
     content: '本数' !important;
-    font-size: 25px;
+    font-size: 25px !important;
     margin: 0px 3px;
 }
 select#id_number option {font-size: 20px !important;}
