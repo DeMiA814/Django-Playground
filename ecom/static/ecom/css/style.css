@@ -18,7 +18,7 @@ header a {
 .product-body{margin:50px 10% 0px 10%;}
 .product-img{width:50%;float: left;}
 .product-img img {width: 100%;}
-.product-form{width:30%;float:left;}
+.product-form{width:30%;float:left;margin: 50px;}
 .product-form form label{font-size: 25px;}
 input[type="number"] {height:21px;}
 input[type="submit"] {
