@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Db2Table1(models.Model):
+    column1 = models.CharField(max_length=10)
+ 
+    def __str__(self):
+        return self.column1
+
 # Messageクラス
 class Message(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, \
