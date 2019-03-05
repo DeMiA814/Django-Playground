@@ -13,7 +13,7 @@ header a {
 .index-table {float:left;width:30%;border: solid 5px #dfdfdf;;margin: 20px 1%;text-align: center;}
 .index-table a {font-size: 40px;}
 .index-table {font-size: 30px;}
-.index-table img {height:300px;margin-top: 20px;width: 100%;}
+.index-table img {height:300px;margin-top: 20px;max-width: 100%;}
 .index-below{
     width: 300px !important;
     height: 70px !important;
