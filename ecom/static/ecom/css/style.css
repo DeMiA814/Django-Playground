@@ -35,7 +35,7 @@ body.product-body {background-color: #f2f2f2;}
 .product-form form label{font-size: 0px;}
 .product-form form label:before {content: '本数' !important;font-size: 25px !important;margin: 0px 3px;}
 #id_number {vertical-align: super;height: 39px;height: 50px;width: 76%;}
-select#id_number option {font-size: 20px !important;}
+select#id_number option {font-size: 15px !important;}
 input[type="submit"] {
   width: 90%; 
   margin-top: 5px;
