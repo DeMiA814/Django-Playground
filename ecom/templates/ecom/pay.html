@@ -50,9 +50,11 @@
         <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する"><br>
     </form>
     {% if messages %}
+    <ul class="messages">
     {% for message in messages %}
-    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
     {% endfor %}
+    </ul>
     {% endif %}
     <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
 </body>
