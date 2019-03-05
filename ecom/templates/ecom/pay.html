@@ -49,16 +49,6 @@
         {% csrf_token %}
         <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する"><br>
     </form>
-    {% if messages %}
-    {% for message in messages %}
-        {% if message.tags == 'success' %}
-        <div class="alert-box success">{{ message }}</div>
-        {% endif %}
-        {% if message.tags == 'error' %}
-        <div class="alert-box alert">{{ message }}</div>
-        {% endif %}
-    {% endfor %}
-    {% endif %}
     <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
 </body>
 </html>
