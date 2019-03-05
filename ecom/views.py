@@ -77,8 +77,6 @@ def pay(request):
             history = History()
             history.item = tmp
             history.save()
-            messages.success(request, '決済完了')
-            messages.error(request, 'ログインに失敗しました。')
 
             
 
