@@ -35,7 +35,8 @@
     {% for item in items %}
     <div class="pay-content">
     <img class="pay-img" src="{{ item.picture }}">
-    <p class="pay-item">{{ item.product }} {{ item.in_cart }}本</p>
+    <p>{{ item.product }}</p><br>
+    <p>{{ item.in_cart }}本</p>
     </div>
     {% endfor %}
     <p class="goukei">合計金額は</p>
