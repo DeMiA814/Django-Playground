@@ -1,13 +1,13 @@
 class Router(object):
     def db_for_read(self, model, **hints):
         if model._meta.app_label == "akademia_sns":
-            return "db2"
+            return "default"
         elif model._meta.app_label == "ecom":
             return "db2"
  
     def db_for_write(self, model, **hints):
         if model._meta.app_label == "akademia_sns":
-            return "db2"
+            return "default"
         elif model._meta.app_label == "ecom":
             return "db2"
  
@@ -20,6 +20,6 @@ class Router(object):
  
     def allow_migrate(self, db, app_label, model=None, **hints):
         if app_label == "akademia_sns":
-            return db == "db2"
+            return db == "default"
         else:
             return db == "db2"
