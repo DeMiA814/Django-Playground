@@ -77,7 +77,7 @@ def pay(request):
         history.item = tmp
         history.save()
         messages.success(request, '決済完了')
-        return redirect(to=='/ecom/pay.html')
+        return redirect(to='/ecom/pay.html')
 
             
 
