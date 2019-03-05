@@ -13,7 +13,7 @@
     <form method="post">
     {% csrf_token %}
     {{ form }}
-    <p class="product-price">{{ product.price }}円</p>
+    <p class="product-price">{{ product.price }}円 / 本</p>
     <input type="submit" name="button_1" value="カートへ入れる"><br>
     </form>
     <a href="pay.html" class="btn-square-shadow">決済へ</a>
