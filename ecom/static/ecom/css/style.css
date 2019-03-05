@@ -90,7 +90,7 @@ body.pay-body {background-color: #f2f2f2;}
 .pay-money{font-size: 50px;}
 .pay-below{clear:both;}
 .pay-kessai{width:344px !important;margin-left:10% !important;margin-bottom: 10px !important;}
-.pay-to-index{width:300px !important;margin-left:10% !important;margin-top: 10px !important;}
+.pay-to-index{width:300px !important;margin: 10px 0px 50px 10% !important;}
 
 /*product.html*/
 /*決済ボタン*/
