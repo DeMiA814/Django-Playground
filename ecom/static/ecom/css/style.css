@@ -18,11 +18,11 @@ header a {
 .product-body{margin:50px 10% 0px 10%;}
 .product-img{width:50%;float: left;}
 .product-img img {width: 100%;}
-.product-contents{width:30%;float:left;}
+.product-contents{width:100%;margin-top: 50px;}
 .product-name {font-size:50px;}
 .product-price {font-size:30px;}
 .product-text {font-size:30px;}
-.product-form{width:100%;margin-top: 50px;}
+.product-form{width:30%;float:left;}
 .product-form form label{font-size: 25px;}
 input[type="number"] {height:21px;}
 input[type="submit"] {
