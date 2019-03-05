@@ -45,7 +45,7 @@ def product(request):
             'number':number,
         }
 
-    if request.method == "POST":
+    if request.method == 'POST':
         num = request.POST['number']
         params["number"] = num
         product.in_cart = num
@@ -66,17 +66,17 @@ def pay(request):
     }
     
     if request.method == 'POST':
-        if 'button_2' in request.POST:
-            tmp = {}
-            for item in items_in_cart:
-                tmp[item.product] = item.in_cart
-                item.in_cart = 0
-                item.save()
-                cart.money = 0
-                cart.save()
-            history = History()
-            history.item = tmp
-            history.save()
+        tmp = {}
+        for item in items_in_cart:
+            tmp[item.product] = item.in_cart
+            item.in_cart = 0
+            item.save()
+            cart.money = 0
+            cart.save()
+        history = History()
+        history.item = tmp
+        history.save()
+        messages.success(request, '決済完了')
 
             
 
