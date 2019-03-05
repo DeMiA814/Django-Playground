@@ -3,11 +3,11 @@ class Router(object):
         #ここでランダムに選択すると、dbの負荷分散っぽいことが出来る
         #例：return random.choice['default','users']
         if model._meta.app_label == "akademia_sns":
-            return "another"
+            return "db2"
         return "default"
     def db_for_write(self, model, **hints):
         if model._meta.app_label == "akademia_sns":
-            return "another"
+            return "db2"
         return "default"
     def allow_relation(self, obj1, obj2, **hints):
         #Trueはリレーションを認める、Falseは認めない、Noneはこのコードでは関知しないという意味
@@ -16,7 +16,7 @@ class Router(object):
         #userアプリの場合はusers設定のデータベースへmigrate。
         #他のアプリはusers以外のデータベースへmigrateする設定
         if model._meta.app_label == "akademia_sns"
-            return db == "another":
+            return db == "db2":
         else:
             return True
         return False
