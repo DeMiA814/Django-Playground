@@ -168,13 +168,6 @@ svg{font-weight:bold;height:auto;}
  background-size: cover;
 }
 
-html{
-  font-family: "Helvetica Neue", sans-serif;
-  width:100%;
-  color:#666666;
-  text-align:center;
-}
-
 .popup-overlay{
   /*Hides pop-up when there is no "active" class*/
   visibility:hidden;
