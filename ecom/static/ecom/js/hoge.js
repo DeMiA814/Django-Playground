@@ -434,3 +434,9 @@ var w = $('.wrapper').width();
 var h = $('.wrapper').height();
 $('#canvas').attr('width', w);
 $('#canvas').attr('height', h);
+
+function disp(){
+
+	window.alert('アラートの表示');
+
+}
