@@ -65,9 +65,9 @@ def pay(request):
         'cart':cart,
     }
     
-    messages.success(request, '決済完了')
-    
     if request.method == 'POST':
+        messages.success(request, '決済完了')
+        messages.error(request, 'ログインに失敗しました。')
         if 'button_2' in request.POST:
             tmp = {}
             for item in items_in_cart:
