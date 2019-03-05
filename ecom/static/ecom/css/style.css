@@ -71,6 +71,14 @@ input[type="submit"]:active {
 .product-text {font-size:30px;}
 
 body.pay-body {background-color: #f2f2f2;}
+.pay-content{
+    float:left;
+    width:30%;
+    border: solid 1px #A9BCF5;
+    margin: 20px 14px;
+    text-align: center;
+}
+.pay-content img {height:300px;margin-top: 20px;max-width: 100%;}
 .pay-cart{font-size: 25px;}
 .pay-money{font-size: 25px;}
 .pay-kessai{width:344px !important;margin-bottom: 10px !important;}
