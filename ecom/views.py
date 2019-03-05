@@ -64,9 +64,10 @@ def pay(request):
         'items':items_in_cart,
         'cart':cart,
     }
-
+    
+    messages.success(request, '決済完了')
+    
     if request.method == 'POST':
-        messages.success(request, '決済完了')
         if 'button_2' in request.POST:
             tmp = {}
             for item in items_in_cart:
