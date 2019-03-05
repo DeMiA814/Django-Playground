@@ -84,6 +84,7 @@ body.pay-body {background-color: #f2f2f2;}
     text-align: center;
     font-weight: bold;
     font-size: 30px;
+    background-color: rgba(47,136,201,0.1);
 }
 .pay-content img {height:300px;margin-top: 20px;max-width: 100%;}
 .pay-cart{font-size: 25px;}
