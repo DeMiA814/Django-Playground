@@ -16,9 +16,10 @@ class Product_form(forms.Form):
     )
     number = forms.ChoiceField(label="本数",widget=forms.Select, choices=CHOICE)
 
+"""
 class Login_form(forms.Form):
     name = forms.CharField(label="name")
     e_mail = forms.EmailField(label="e_mail")
     password = forms.CharField(label="password")
-
+"""
 
