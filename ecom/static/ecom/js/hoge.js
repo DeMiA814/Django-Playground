@@ -437,6 +437,6 @@ $('#canvas').attr('height', h);
 
 function disp(){
 
-	window.alert('アラートの表示');
+	window.alert('ありがとうございます。決済されました！！');
 
 }
