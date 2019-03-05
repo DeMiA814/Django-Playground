@@ -47,7 +47,8 @@
     </div>
     <form method="post">
         {% csrf_token %}
-        <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する"><br>
+        <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する" onClick="disp()"><br>
+        <script></script>
     </form>
     {% if messages %}
     <ul class="messages">
