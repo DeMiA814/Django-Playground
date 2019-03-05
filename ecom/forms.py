@@ -1,7 +1,20 @@
 from django import forms
 
 class Product_form(forms.Form):
-    number = forms.IntegerField(label="個数")
+    CHOICE = (
+    ('0', '選択肢から選んでください><'),
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    ('9', '9'),
+    ('10', '10'),
+    )
+    number = forms.ChoiceField(widget=forms.Select, choices=CHOICE)
 
 class Login_form(forms.Form):
     name = forms.CharField(label="name")
