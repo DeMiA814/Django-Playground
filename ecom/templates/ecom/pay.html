@@ -39,9 +39,11 @@
     <p>{{ item.in_cart }}本</p>
     </div>
     {% endfor %}
+    <div class="pay-below">
     <p class="goukei">合計金額は</p>
     <p class="pay-money">{{ cart.money }}円</p>
     <p class="desu">です。</p><br>
+    </div>
     <form method="post">
         {% csrf_token %}
         <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する"><br>
