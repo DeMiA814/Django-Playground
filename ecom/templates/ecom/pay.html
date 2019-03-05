@@ -31,12 +31,15 @@
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeM-iON</text>
    </svg>
       </header>
-    <p class="anataga">あなたがカートに入れた商品は</p>
+    <p class="anataga">カートに入っている商品</p>
     {% for item in items %}
-    <p class="pay-cart">＞＞{{ item.product }} {{ item.in_cart }}本</p>
+    <div class="pay-content">
+    <img class="pay-img" src="{{ item.picture }}">
+    <p class="pay-item">{{ item.product }} {{ item.in_cart }}本</p>
+    </div>
     {% endfor %}
     <p class="goukei">合計金額は</p>
-    <p class="pay-money">＞＞{{ cart.money }}円</p>
+    <p class="pay-money">{{ cart.money }}円</p>
     <p class="desu">です。</p><br>
     <form method="post">
         {% csrf_token %}
