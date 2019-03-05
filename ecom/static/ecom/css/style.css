@@ -20,7 +20,7 @@ header a {
 .product-img img {width: 100%;}
 .product-form{width:30%;float:left;margin: 50px;}
 .product-form form label{font-size: 25px;}
-input[type="number"] {height:21px;}
+#id_number {height:21px;}
 input[type="submit"] {
   width: 90%; 
   margin-top: 5px;
