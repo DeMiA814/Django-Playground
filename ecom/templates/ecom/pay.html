@@ -36,7 +36,8 @@
     <div class="pay-content">
     <img class="pay-img" src="{{ item.picture }}">
     <p>{{ item.product }}</p>
-    <p>{{ item.in_cart }}本</p>
+    <p>{{ item.in_cart }}本</p><br>
+    <a href="{% url 'product' %}?product={{ item.product }}">変更する</a>
     </div>
     {% endfor %}
     <div class="pay-below">
