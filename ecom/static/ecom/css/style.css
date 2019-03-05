@@ -20,7 +20,13 @@ header a {
 .product-img img {max-height: 500px;max-width: 100%;}
 .product-form{width:30%;float:left;margin: 50px;}
 .product-form form label{font-size: 25px;}
-.product-input {width:240px;}
+.product-input {
+    width:240px;
+    background: #232323;
+    border-radius: 3px;
+    border: solid 1px #232323;
+    overflow: hidden;
+    color: #FFFFFF;}
 #id_number {vertical-align: super;height: 39px;height: 50px;width: 76%;}
 select#id_number option {font-size: 20px !important;}
 input[type="submit"] {
