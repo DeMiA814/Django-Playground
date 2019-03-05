@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 
 from .models import Person, Item, History, Cart
-from .forms import Product_form, Login_form
+from .forms import Product_form#, Login_form
 
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
