@@ -48,7 +48,7 @@
     <form method="post">
         {% csrf_token %}
         <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する" onClick="disp()"><br>
-        <script></script>
+        <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
     </form>
     {% if messages %}
     <ul class="messages">
