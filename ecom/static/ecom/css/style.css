@@ -19,7 +19,7 @@ header a {
 .product-img{width:50%;float: left;text-align: center;}
 .product-img img {max-height: 500px;max-width: 100%;}
 .product-form{width:30%;float:left;margin: 50px;}
-.product-form form label{font-size: 25px;}
+.product-form form label{font-size: 0px;}
 .product-input {
     width:240px;
     background: #232323;
@@ -28,6 +28,11 @@ header a {
     overflow: hidden;
     color: #FFFFFF;}
 #id_number {vertical-align: super;height: 39px;height: 50px;width: 76%;}
+#id_number:before {
+    content: '本数' !important;
+    font-size: 25px;
+    margin: 0px 3px;
+}
 select#id_number option {font-size: 20px !important;}
 input[type="submit"] {
   width: 90%; 
