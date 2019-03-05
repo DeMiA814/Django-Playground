@@ -66,7 +66,7 @@ def index(request):
             'check_form':checkform,
             'search_form':searchform,
         }
-    return render(request, 'sns/index.html', params)
+    return render(request, 'akademia_sns/index.html', params)
 
 @login_required(login_url='/admin/login/')
 def groups(request):
@@ -150,7 +150,7 @@ def add(request):
     # Userが本人だった場合の処理
     if add_user == request.user:
         messages.info(request, "自分自身をFriendに追加することはできません。")
-        return redirect(to='/sns')
+        return redirect(to='/akademia_sns')
     # publicの取得
     (public_user, public_group) = get_public()
     # add_userのFriendの数を調べる
@@ -160,7 +160,7 @@ def add(request):
     if frd_num > 0:
         messages.info(request, add_user.username + \
                 ' は既に追加されています。')
-        return redirect(to='/sns')
+        return redirect(to='/akademia_sns')
     
     # ここからFriendの登録処理
     frd = Friend()
@@ -171,7 +171,7 @@ def add(request):
     # メッセージを設定
     messages.success(request, add_user.username + ' を追加しました！　\
             groupページに移動して、追加したFriendをメンバーに設定して下さい。')
-    return redirect(to='/sns')
+    return redirect(to='/akademia_sns')
 
 # グループの作成処理
 @login_required(login_url='/admin/login/')
