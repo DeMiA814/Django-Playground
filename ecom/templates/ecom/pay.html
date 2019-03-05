@@ -49,17 +49,12 @@
         {% csrf_token %}
         <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する" onClick="disp()"><br>
         <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
-    <ul class="messages">
-        <li>テスト</li>
-        {% if messages %}
-        <li>いいい</li>
-        {% for message in messages %}
-        <li>わわわ{{ message }}</li>
-        {% endfor %}
-        <li>ううう</li>
-        {% endif %}
-    </ul>
     </form>
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
     <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
 </body>
 </html>
