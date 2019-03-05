@@ -14,8 +14,8 @@ header a {
     font-size: 30px;
     float:left;
     width:30%;
-    border: solid 5px #dfdfdf;
-    margin: 20px 1%;
+    border: solid 1px #A9BCF5;
+    margin: 20px 14px;
     text-align: center;
     background-color: rgba(47,136,201,0.1);
 }
