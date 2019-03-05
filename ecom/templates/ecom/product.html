@@ -8,20 +8,22 @@
 </head>
 <body class="product-body">
     <p class="product-img"><img src="{{ product.picture }}"></p>
-    <div class="product-contents">
-    <p class="product-name">{{ product.product }}</p>
-    <p class="product-price">{{ product.price }}円</p>
-    <p class="product-text">{{ product.description }}</p>
-    </div>
 
 <div class="product-form">
-<form method="post">
+    <form method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" name="button_1" value="カートへ入れる"><br>
-</form>
-<a href="pay.html" class="btn-square-shadow">決済へ</a>
-<a href="/ecom/" class="btn-square-shadow">商品一覧へ</a>
+    </form>
+    <a href="pay.html" class="btn-square-shadow">決済へ</a>
+    <a href="/ecom/" class="btn-square-shadow">商品一覧へ</a>
 </div>
+    
+<div class="product-contents">
+    <p class="product-name">{{ product.product }}</p>
+    <p class="product-price">{{ product.price }}円</p>
+    <p class="product-text">{{ product.description }}</p>
+</div>
+
 </body>
 </html>
