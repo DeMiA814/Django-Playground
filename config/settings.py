@@ -143,5 +143,3 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-
-MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
