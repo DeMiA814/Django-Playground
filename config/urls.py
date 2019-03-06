@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ecom/', include('ecom.urls')),
     path('akademia_sns/', include('akademia_sns.urls')),
+    path('register/',include('register.urls')),
 ]
