@@ -21,5 +21,5 @@ DATABASES = {
         'NAME': '/app/db2.sqlite3',
     },
 }
-"""
+
 DEBUG = True
