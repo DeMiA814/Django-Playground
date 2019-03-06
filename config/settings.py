@@ -99,7 +99,7 @@ DATABASES = {
 }
 """
 
-DATABASE_ROUTERS = ['routers.Router']
+DATABASE_ROUTERS = ['ecom.Router.ecomRouter','akademia_sns.Router.akademia_snsRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
