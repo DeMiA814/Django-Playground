@@ -95,7 +95,8 @@ DATABASES = {
         'NAME': '/app/db2.sqlite3',
     },
 }
-"""
+
+
 DATABASE_ROUTERS = ['ecom.Router.ecomRouter','akademia_sns.Router.akademia_snsRouter']
 
 # Password validation
