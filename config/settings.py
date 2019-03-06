@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -97,7 +97,6 @@ DATABASES = {
         'NAME': 'db2',
     },
 }
-"""
 
 DATABASE_ROUTERS = ['ecom.Router.ecomRouter','akademia_sns.Router.akademia_snsRouter']
 
