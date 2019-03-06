@@ -69,6 +69,8 @@ TEMPLATES = [
     },
 ]
 
+print(os.path.join(BASE_DIR, 'db.sqlite3'))
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -82,16 +84,10 @@ DATABASES = {
     }
 }
 
-    """
-    'db2': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db2.sqlite3'),
-    }
-    """
 
-print(os.path.join(BASE_DIR, 'db.sqlite3'))
 
 """
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
