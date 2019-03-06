@@ -74,17 +74,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    """
     'db2': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db2.sqlite3'),
     }
+    """
 }
+
+print(os.path.join(BASE_DIR, 'db.sqlite3'))
 
 """
 DATABASES = {
@@ -97,7 +101,7 @@ DATABASES = {
         'NAME': 'db2',
     },
 }
-
+"""
 DATABASE_ROUTERS = ['ecom.Router.ecomRouter','akademia_sns.Router.akademia_snsRouter']
 
 # Password validation
