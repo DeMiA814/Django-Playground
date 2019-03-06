@@ -10,8 +10,6 @@ from .forms import GroupCheckForm,GroupSelectForm,\
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
-request.user = "umeki"
-
 # indexのビュー関数
 def index(request):
     # publicのuserを取得
