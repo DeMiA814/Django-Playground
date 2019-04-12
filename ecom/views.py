@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponse
+from django.views import generic
 
 from .models import Person, Item, History, Cart
 from .forms import Product_form, Login_form
@@ -11,6 +12,9 @@ from .forms import Product_form, Login_form
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+import stripe
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def index(request):
     products = Item.objects.all()
@@ -64,8 +68,20 @@ def pay(request):
         'items':items_in_cart,
         'cart':cart,
     }
-    
-    if request.method == 'POST':
+
+    try:
+        charge = stripe.Charge.create(
+		amount=total_price,
+		currency='jpy',
+		source=request.POST['stripeToken'],
+#		source='req_byUy9GE8MGrulA',
+		description='メール:{} 書籍名:{}'.format(request.user.email, item.product),
+		)
+    except stripe.error.CardError as e:
+        context = self.get_context_data()
+        context['message'] = 'Your payment cannot be completed. The card has been declined.'
+        return render(request, '/ecom/pay.html', context)
+    else:
         tmp = {}
         for item in items_in_cart:
             tmp[item.product] = item.in_cart
@@ -79,16 +95,14 @@ def pay(request):
         messages.success(request, '決済完了')
         return redirect(to='/ecom/pay.html')
 
-            
-
     return render(request, 'ecom/pay.html', params)
 
-
-#----------------
+def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['publick_key'] = settings.STRIPE_PUBLIC_KEY
+    return context
 
 def get_cart():
-    cart = Cart.objects.first()
+    cart = Cart.objects.all()
     return cart
-
-
 

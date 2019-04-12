@@ -45,10 +45,21 @@
     <p class="pay-money">{{ cart.money }}円</p>
     <p class="desu">です。</p><br>
     </div>
-    <form method="post">
+    <form action="" method="post">
         {% csrf_token %}
         <input type="submit" name="button_2" class="btn-square-shadow pay-kessai" value="決済する" onClick="disp()"><br>
-        <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
+	<script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ publick_key }}"
+            data-amount="{{ book.price }}"
+            data-name="なりと書店"
+            data-description="{{ book.title }}"
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            data-locale="ja"
+            data-currency="jpy"
+            data-email="{{ user.email }}">
+        </script>
+        {% csrf_token %}
     </form>
 {% if messages %}
     {% for message in messages %}

@@ -143,3 +143,6 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+STRIPE_PUBLIC_KEY = 'pk_test_BgnsajeMBAHpydOEdFPBQajQ00A3OoSAyM'
+STRIPE_SECRET_KEY = 'sk_test_Mt9tlU3KGEKvnLC6xWkKKZaQ00qCA4REIm'
