@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('ecom/', include('ecom.urls')),
+    path('ecom/payf.html', include('payments.urls')),
     
 ]

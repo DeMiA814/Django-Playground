@@ -1,1 +1,19 @@
-﻿<h>Please login to buy!</h>
+﻿{% extends 'ecom/base.html'%}
+
+{% block content%}
+<style>
+h1 {text-align:center;}
+h3 {text-align:center;}
+</style>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1><centre><Strong> Please <a href= "/ecom/login"><Strong>Login</Strong><a> to buy!</centre>
+</h1>
+<br>
+<h3> <centre> Or<a href="/ecom/signup"> Signup Here<a></centre></h3>
+
+{%endblock%}

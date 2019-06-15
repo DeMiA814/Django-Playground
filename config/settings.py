@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ecom',
+    'payments.apps.PaymentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -143,6 +144,8 @@ STATICFILES_DIRS = (
 )
 LOGIN_REDIRECT_URL = '/ecom/index'
 LOGOUT_REDIRECT_URL = '/ecom/index'
+STRIPE_SECRET_KEY = 'sk_test_3vLNLhQL1zkyPV4Z4WLm7EkX001fLVduCJ'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_CY2MjuygMolD3aQTwFNgwr9n00SQtYU17d'
 
 try:
     from .local_settings import *

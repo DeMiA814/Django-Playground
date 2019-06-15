@@ -1,0 +1,34 @@
+﻿{% extends "ecom/base.html"%}
+{% block content %}
+<p class="goukei">合計金額は</p>
+<br>
+<p class="price goukei"></p>
+<p class = "userName" style = "display: none" id = "userName" >{{User  }}</p>
+
+<script>
+	
+	let userName = $('#userName')[0].textContent.trim();
+	let products = JSON.parse(localStorage.getItem(userName + "_products"));
+	let price = localStorage.getItem(userName+"_price");
+	if (!price)
+		price = 0;
+	else
+		price = Number(JSON.parse(price));
+	$('.price').text(price+'円');
+
+	
+
+</script>
+<form action="{% url 'charge' %}" method="post">
+  {% csrf_token %}
+<script Stripe.setPublishableKey('{{ key }}');
+	src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+   	 data-key="{{ key }}";
+   	 data-description= " Thanks for buying"
+   	 data-amount=JSON.parse(price);
+   	 data-locale="auto";
+	 >
+</script>
+
+{%endblock%}
+

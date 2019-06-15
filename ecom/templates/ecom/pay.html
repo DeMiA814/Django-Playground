@@ -53,6 +53,7 @@
 {% endif %}
     <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
  <p class = "userName" id = "userName" style ="display: none">{{ cart.person }}</p>
+<h3> <a href="/ecom/payf.html">Pay with Card<a></h3>
 
 <script>
 	let userName = $('#userName')[0].textContent.trim();
@@ -64,6 +65,7 @@
 		price = Number(JSON.parse(price));
 	$('.pay-money').text(price+'円');
 	
+	
 	for (var key in products)
 		{
 			if (products.hasOwnProperty(key)) {
@@ -73,13 +75,15 @@
     				<p class = "productQuantity">${ products[key].quantity }</p>
     				<p><a class ="returnProduct" name = "${ products[key].name }" href="./product.html?product=${ products[key].name }&restart=true" >変更する</a></p>	
 				</div>`);
+				
 		
 			}
 	}
+	
 	$('#paymentComplete').click((event) => {
-	localStorage.setItem(userName + "_products", "{}");
-	localStorage.setItem(userName + "_price", "0");
-	disp();
+		localStorage.setItem(userName + "_products", "{}");
+		localStorage.setItem(userName + "_price", "0");
+		disp();
 })
 	$('.returnProduct').click((event) => {
 		let productId = event.target.name.trim();
@@ -92,5 +96,9 @@
 		
 		})		
 </script>
+
+
+
+	
 </body>
 </html>

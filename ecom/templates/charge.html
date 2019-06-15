@@ -1,0 +1,24 @@
+﻿{%extends 'ecom/base.html' %}
+
+{% block content %}
+
+<p class = "userName"  id = "userName" style="display: none">{{User}}</p>
+<p class= "goukei"> Thanks for buying. <br>You paid. </p>
+<p class="price goukei"></p>
+
+
+<script>
+	let userName = $('#userName')[0].textContent.trim();
+	let products = JSON.parse(localStorage.getItem(userName + "_products"));
+	let price = localStorage.getItem(userName+"_price");
+	if (!price)
+		price = 0;
+	else
+		price = Number(JSON.parse(price));
+	$('.price').text(price+'円')
+
+	localStorage.setItem(userName + "_products", "{}");
+	localStorage.setItem(userName + "_price", "0");
+</script>
+<h3> <a href="/ecom">HomePage<a></h3>
+{% endblock%}

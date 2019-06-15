@@ -13,9 +13,19 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
 
 
+import stripe
+from ecom.models import *
+from django.conf import settings
+import stripe
+
+# Create your views here.
+
+from django.views.generic.base import TemplateView
+
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def index(request):
     products = Item.objects.all()
@@ -74,29 +84,36 @@ def pay(request):
         cart = get_cart(request)
         #item_in_cart = Item.objects.exclude(in_cart=0)
         item_in_cart = Item.objects.exclude(in_cart=0)
-        total_price = 0
-        
+        total_price = 0   
         for item in item_in_cart:
             total_price += item.in_cart * item.price
         cart.money = total_price
+        
         params = {
             'items':item_in_cart,
             'cart':cart,
+            
         }
-    
+       
+        #request.session['token'] = token # set 'token' in the session
+        request.session['cart_money'] = cart.money
+        
         if request.method == 'POST':
+            
             tmp = {}
             for item in item_in_cart:
                 tmp[item.product] = item.in_cart
                 item.in_cart = 0
                 item.save()
                 cart.money = 0
-                
                 #cart.save()
+            
+            
             history = History()
             person=Person.objects.get(name=request.user.username)
             history.name=person
             history.item = tmp
+            
             #for history in History:
             history.save()
             messages.success(request, '決済完了')
@@ -117,8 +134,9 @@ def get_cart(request):
         #cart = Cart(request,00)
         
         return cart
-    
-    
+
+
+  
 
 
 def signup(request):
