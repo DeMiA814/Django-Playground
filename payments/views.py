@@ -25,8 +25,12 @@ class PayView(TemplateView):
         usern=Person.objects.filter(name=self.request.user)
         use=usern[0]
         usn=use.name
+        car=Cart.objects.get(person=usn)
+        #car.money=0
         context= {'key':settings.STRIPE_PUBLISHABLE_KEY,
-                   'User':usn,}
+                   'User':usn,
+                  'mon':car.money,
+                  'nam':car.person,}
         
         
         return (context)
@@ -35,18 +39,35 @@ class PayView(TemplateView):
 def charge(request): # new
     
     if request.method == 'POST':
-        
-        #token = request.session['token'] 
-        money = request.session['cart_money']          
+        usn=request.user.username 
+        car=Cart.objects.get(person=usn)
+       # money=request.session['cart_money']
+        #mon=car[0]
+        money=car.money
         charge = stripe.Charge.create(
             amount=money,
             currency='jpy',
-            description='Demion',
+            description=usn,
             source=request.POST['stripeToken']
         )
-        usn=request.user.username
-        cont={ 'User': usn
-               }
+        
+        item_in_cart = Item.objects.exclude(in_cart=0)
+        tmp = {}
+        for item in item_in_cart:
+                 tmp[item.product] = item.in_cart
+                 item.in_cart = 0
+                 item.save()
+                 
+        car.money=0         
+        car.save()
+        history = History()
+        person=Person.objects.get(name=request.user.username)
+        history.name=person
+        history.item = tmp
+        history.save()
+        cont={ 'User': usn,
+               'mon':car.money,
+               'nam':car.person,}
         return render(request, 'charge.html',cont)
 
 

@@ -21,14 +21,14 @@
 </script>
 <form action="{% url 'charge' %}" method="post">
   {% csrf_token %}
-<script Stripe.setPublishableKey('{{ key }}');
-	src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+<script  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
    	 data-key="{{ key }}";
    	 data-description= " Thanks for buying"
-   	 data-amount=JSON.parse(price);
-   	 data-locale="auto";
+   	 data-amount=JSON.stringify(price);
+   	 data-locale="auto"
 	 >
 </script>
+</form>
 
 {%endblock%}
 

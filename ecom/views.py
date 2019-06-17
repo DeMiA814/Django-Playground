@@ -33,6 +33,7 @@ def index(request):
         'products':products,
     }
     if request.user.is_authenticated:
+        
         return render(request, 'ecom/index1.html', params)
     else:
         pay.items_in_cart=0
@@ -62,6 +63,8 @@ def product(request):
     product_name = request.GET.get('product')
     
     product = Item.objects.get(product=product_name)
+    #cart.item=product
+    
     params = {
             'product':product,
             'form':Product_form(),
@@ -71,9 +74,21 @@ def product(request):
 
     if request.method == 'POST':
         num = request.POST['number']
-        params["number"] = num
+        params['number'] = num
         product.in_cart = num
+        cart = get_cart(request)
+        tot=int(product.in_cart)*int(product.price)
+        cart.money=cart.money+tot
+        cart.save()
+        item_in_cart = Item.objects.exclude(in_cart=0)
+        #total_price=0  
+        #for item in item_in_cart:
+         #   total_price = item.in_cart * item.price
+          #  cart.money += total_price
+           # cart.save()
+        
         product.save()
+        
     
     return render(request, 'ecom/product.html', params)
 
@@ -84,31 +99,31 @@ def pay(request):
         cart = get_cart(request)
         #item_in_cart = Item.objects.exclude(in_cart=0)
         item_in_cart = Item.objects.exclude(in_cart=0)
-        total_price = 0   
-        for item in item_in_cart:
-            total_price += item.in_cart * item.price
-        cart.money = total_price
+        #total_price = 0   
+        #for item in item_in_cart:
+         #   total_price += item.in_cart * item.price
+        #cart.money = total_price
+        #cart.save()
+        #request.session['cart_money']=cart.money
         
         params = {
             'items':item_in_cart,
-            'cart':cart,
-            
+            'cart':cart,     
         }
        
-        #request.session['token'] = token # set 'token' in the session
-        request.session['cart_money'] = cart.money
-        
-        if request.method == 'POST':
+        if (request.method == 'POST' ):
             
             tmp = {}
             for item in item_in_cart:
                 tmp[item.product] = item.in_cart
                 item.in_cart = 0
                 item.save()
-                cart.money = 0
-                #cart.save()
+                #cart.item.in_cart=0
+                #cart.item={}
+                
             
-            
+            cart.money = 0
+            cart.save()
             history = History()
             person=Person.objects.get(name=request.user.username)
             history.name=person

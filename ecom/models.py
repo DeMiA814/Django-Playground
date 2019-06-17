@@ -54,7 +54,8 @@ class History(models.Model):
 class Cart(models.Model):
     person = models.CharField(max_length=100, default="prakhar")
     money = models.IntegerField(default=0)
-    #item=models.ManyToManyField(Item)
+    #item=models.ForeignKey(Item,on_delete=models.SET_NULL, null=True)
+
     #id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular user')
     
     def __str__(self):
