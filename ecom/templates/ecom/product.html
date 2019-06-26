@@ -34,6 +34,14 @@
       </header>
     <p class="product-img"><img src="{{ product.picture }}"></p>
 
+<script>
+{% if messages %}
+	alert("ログインしてください")
+	location.href="http://127.0.0.1:8000/ecom"
+{% endif %}
+</script>
+  
+
 <div class="product-form">
     <form method="post">
     {% csrf_token %}

@@ -58,6 +58,9 @@ def authentication(request):
     form.add_error(None, '入力内容が違います。')
 """
 def product(request):
+    if ((request.user.is_authenticated)==False):
+       messages.add_message(request, messages.INFO, 'login to proceed')
+
     cart = get_cart(request)
     number = 0
     product_name = request.GET.get('product')
@@ -91,6 +94,8 @@ def product(request):
         
     
     return render(request, 'ecom/product.html', params)
+ #else:
+     
 
 def pay(request):
     if request.user.is_authenticated:

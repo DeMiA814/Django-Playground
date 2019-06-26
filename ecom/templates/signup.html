@@ -44,9 +44,10 @@ ul {
   </form> -->
 
  <form method="post">
-  
-  <input type="hidden" name="csrfmiddlewaretoken" value="PEGezXWab3fxMW0cnKUYlZjZ8UhsAD6nCdHZyPVFBfOLN9GDhDon6qWeyGUBYkdd">
-    <p><label for="id_username">ユーザー名:</label>
+ 
+   {% csrf_token %} 
+	
+     <p><label for="id_username">ユーザー名:</label>
  <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username";style="float:left"> 
 <br>
 <p class="tab">150文字以内の数字及び英文字または以下の記号のみ有効です。@/./+/-/_</p>
