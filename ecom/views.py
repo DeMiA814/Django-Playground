@@ -104,14 +104,14 @@ def pay(request):
          #   total_price += item.in_cart * item.price
         #cart.money = total_price
         #cart.save()
-        #request.session['cart_money']=cart.money
+       
         
         params = {
             'items':item_in_cart,
             'cart':cart,     
         }
        
-        if (request.method == 'POST' ):
+        '''if (request.method == 'POST' ):
             
             tmp = {}
             for item in item_in_cart:
@@ -131,8 +131,10 @@ def pay(request):
             
             #for history in History:
             history.save()
-            messages.success(request, '決済完了')
+            
+           # messages.success(request, '決済完了')
             return redirect(to='/ecom/pay.html')
+            '''
         return render(request, 'ecom/pay.html',params)
     else:
             #messages.add_message(request, messages.INFO, 'Please login to buy form us.')
@@ -157,6 +159,7 @@ def get_cart(request):
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
+        
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')

@@ -34,31 +34,27 @@
       </header>
     <p class="anataga">カートに入っている商品</p>
     <div class = "paymentDetails">
-	<h1> Cart </h1>
 	</div>
     <div class="pay-below">
     <p class="goukei">合計金額は</p>
     <p class="pay-money">0円</p>
     <p class="desu">です。</p><br>
     </div>
-    <form method="post">
-        {% csrf_token %}
-        <input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" value="決済する"><br>
-        <script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>
-    </form>
-{% if messages %}
-    {% for message in messages %}
-        <p>{{ message }}</p>
-    {% endfor %}
-{% endif %}
-    <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
- <p class = "userName" id = "userName" style ="display: none">{{ cart.person }}</p>
-<h3> <a href="/ecom/payf.html">Pay with Card<a></h3>
+<p class = "userName" id = "userName" style ="display: none">{{ cart.person }}</p>
+
+
+<br><a href='payf.html' style="text-decoration : none;"><input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" value="カードでお支払い"></a>
+       
+<br> <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
+
+
 
 <script>
+	
 	let userName = $('#userName')[0].textContent.trim();
 	let products = JSON.parse(localStorage.getItem(userName + "_products"));
 	let price = localStorage.getItem(userName+"_price");
+	
 	if (!price)
 		price = 0;
 	else
@@ -78,13 +74,10 @@
 				
 		
 			}
-	}
 	
-	$('#paymentComplete').click((event) => {
-		localStorage.setItem(userName + "_products", "{}");
-		localStorage.setItem(userName + "_price", "0");
-		disp();
-})
+	
+	
+}
 	$('.returnProduct').click((event) => {
 		let productId = event.target.name.trim();
 		let products = JSON.parse(localStorage.getItem(userName + '_products'));

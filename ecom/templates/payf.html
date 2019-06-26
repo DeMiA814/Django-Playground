@@ -1,6 +1,6 @@
 ﻿{% extends "ecom/base.html"%}
 {% block content %}
-<p class="goukei">合計金額は</p>
+<p class="goukei">お支払総額 :</p>
 <br>
 <p class="price goukei"></p>
 <p class = "userName" style = "display: none" id = "userName" >{{User  }}</p>
@@ -14,21 +14,44 @@
 		price = 0;
 	else
 		price = Number(JSON.parse(price));
-	$('.price').text(price+'円');
+	$('.price').text({{mon}}+'円');
 
 	
 
 </script>
-<form action="{% url 'charge' %}" method="post">
-  {% csrf_token %}
-<script  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-   	 data-key="{{ key }}";
-   	 data-description= " Thanks for buying"
-   	 data-amount=JSON.stringify(price);
-   	 data-locale="auto"
-	 >
+
+
+<script>
+{% if messages %}
+	alert("何かご購入ください")
+	location.href="http://127.0.0.1:8000/ecom"
+{% endif %}
 </script>
+  
+
+ 
+
+   
+	<form action="{% url 'charge' %}" method="post">
+  	{% csrf_token %}
+	<script  src="https://checkout.stripe.com/checkout.js" class="stripe-button" value="stripe-button"
+   		 data-key="{{ key }}";
+   	 	data-description= " お支払情報入力フォーム"
+   	 	data-amount=JSON.stringify(price);
+   	 	data-locale="auto"
+	 	>
+	</script>
+<script>
+        
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+
+<input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" value="決済">
+
+
+
 </form>
+
 
 {%endblock%}
 

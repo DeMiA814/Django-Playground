@@ -11,12 +11,23 @@ form {
 }
 
 </style>
-<h1>Login</h1>
-<form method="post">
+<h1>ログイン</h1>
+<!--<form method="post">
   {% csrf_token %}
  {{ form }}
   <button type="submit">Login</button>
-</form>  
+</form>  -->
 
 
+<form method="post">
+  
+<input type="hidden" name="csrfmiddlewaretoken" value="LzRDCy1sfxKQP4nQbcdx6zMQzJAbi3C4y8SoBq0XFJj4Qh3h55HWR0p5ZvdkGKJU">
+<ul class="errorlist nonfield"></li></ul>
+ <label for="id_username">ユーザー名:</label><input type="text" name="username" autofocus="" required="" id="id_username">
+<label for="id_password">パスワード:</label><input type="password" name="password" required="" id="id_password">
+  <button type="submit">ログイン</button>
+
+</form>
+
+  
 {%endblock%}  

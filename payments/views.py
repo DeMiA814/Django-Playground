@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate
 from django.utils.decorators import method_decorator
 from django.conf import settings
-
+from django.contrib import messages
+from django.shortcuts import redirect
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
@@ -21,23 +22,32 @@ class PayView(TemplateView):
     
         
     def get_context_data(self, **kwargs): # new
+        
         context = super().get_context_data(**kwargs)
         usern=Person.objects.filter(name=self.request.user)
         use=usern[0]
         usn=use.name
         car=Cart.objects.get(person=usn)
+        if car.money==0:
+            messages.add_message(self.request, messages.INFO, 'Buy something to proceed.')
+        
         #car.money=0
         context= {'key':settings.STRIPE_PUBLISHABLE_KEY,
-                   'User':usn,
-                  'mon':car.money,
-                  'nam':car.person,}
+                      'User':usn,
+                      'mon':car.money,
+                      'nam':car.person,}
         
         
         return (context)
+        
 
 
-def charge(request): # new
+def charge(request): 
+
     
+    usn=request.user.username 
+    car=Cart.objects.get(person=usn)
+
     if request.method == 'POST':
         usn=request.user.username 
         car=Cart.objects.get(person=usn)
@@ -69,6 +79,7 @@ def charge(request): # new
                'mon':car.money,
                'nam':car.person,}
         return render(request, 'charge.html',cont)
+    
 
 
     

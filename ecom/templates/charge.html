@@ -3,10 +3,8 @@
 {% block content %}
 
 <p class = "userName"  id = "userName" style="display: none">{{User}}</p>
-<p class= "goukei"> Thanks for buying. <br>You paid. </p>
+<p class= "goukei"> ご購入ありがとうございました。 <br>支払い額： </p>
 <p class="price goukei"></p>
-
-
 <script>
 	let userName = $('#userName')[0].textContent.trim();
 	let products = JSON.parse(localStorage.getItem(userName + "_products"));
@@ -20,5 +18,6 @@
 	localStorage.setItem(userName + "_products", "{}");
 	localStorage.setItem(userName + "_price", "0");
 </script>
-<h3> <a href="/ecom">HomePage<a></h3>
+   <br><a href="/ecom" style="text-decoration : none;"><input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" value="トップページに戻る"></a>
+<!--<h3> <a href="/ecom">トップページに戻る<a></h3>-->
 {% endblock%}
