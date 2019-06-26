@@ -58,44 +58,44 @@ def authentication(request):
     form.add_error(None, '入力内容が違います。')
 """
 def product(request):
-    if ((request.user.is_authenticated)==False):
-       messages.add_message(request, messages.INFO, 'login to proceed')
-
-    cart = get_cart(request)
-    number = 0
-    product_name = request.GET.get('product')
     
-    product = Item.objects.get(product=product_name)
-    #cart.item=product
+   if (request.user.is_authenticated):
+        cart = get_cart(request)
+        number = 0
+        product_name = request.GET.get('product')
     
-    params = {
+        product = Item.objects.get(product=product_name)
+        #cart.item=product
+    
+        params = {
             'product':product,
             'form':Product_form(),
             'number':number,
             'cart':cart,
-        }
+            }
 
-    if request.method == 'POST':
-        num = request.POST['number']
-        params['number'] = num
-        product.in_cart = num
-        cart = get_cart(request)
-        tot=int(product.in_cart)*int(product.price)
-        cart.money=cart.money+tot
-        cart.save()
-        item_in_cart = Item.objects.exclude(in_cart=0)
+        if request.method == 'POST':
+            num = request.POST['number']
+            params['number'] = num
+            product.in_cart = num
+            cart = get_cart(request)
+            tot=int(product.in_cart)*int(product.price)
+            cart.money=cart.money+tot
+            cart.save()
+            item_in_cart = Item.objects.exclude(in_cart=0)
         #total_price=0  
         #for item in item_in_cart:
          #   total_price = item.in_cart * item.price
           #  cart.money += total_price
            # cart.save()
         
-        product.save()
+            product.save()
         
     
-    return render(request, 'ecom/product.html', params)
- #else:
-     
+        return render(request, 'ecom/product.html', params)
+   else:
+      # messages.add_message(request, messages.INFO, 'login to proceed')
+       return render(request, 'ecom/pay1.html')
 
 def pay(request):
     if request.user.is_authenticated:
