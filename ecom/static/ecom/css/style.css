@@ -19,7 +19,7 @@ header a {
     text-align: center;
     background-color: rgba(47,136,201,0.1);
 }
-.index-table a {font-size: 40px;}
+.index-table a {font-size: 30px;}
 .index-table img {height:300px;margin-top: 20px;max-width: 100%;}
 .index-below{
     width: 300px !important;
