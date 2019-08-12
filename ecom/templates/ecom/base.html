@@ -2,11 +2,14 @@
 <!doctype html>
 
 <head>
+    <script src="{% static 'ecom/js/pace.min.js' %}"></script>
+    <link rel="stylesheet" type ="text/css" href="{% static 'ecom/css/pace-theme-center-circle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'ecom/css/normalize.css' %}">
     <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />
     <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</head> 
+</head>
  <body class="pay-body">
     <header background-color:#e6e6fa>
      <svg viewbox="0 0 100 20">
@@ -16,7 +19,7 @@
       <stop offset="95%" stop-color="#123752"/>
     </linearGradient>
     <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
         <animateTransform
             attributeName="transform"
             begin="0s"
@@ -27,7 +30,7 @@
             repeatCount="indefinite" />
       </path>
     </pattern>
-   </defs>  
+   </defs>
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#wave)"  fill-opacity="0.6">DeM-iON</text>
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeM-iON</text>
    </svg>
@@ -36,5 +39,5 @@
 {% block content %}
 {% endblock content %}
 </div>
-</body>  
+</body>
 </html>

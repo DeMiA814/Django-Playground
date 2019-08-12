@@ -2,6 +2,8 @@
 <!doctype html>
 <html lang="ja">
 <head>
+    <script src="{% static 'ecom/js/pace.min.js' %}"></script>
+    <link rel="stylesheet" type ="text/css" href="{% static 'ecom/css/pace-theme-center-circle.min.css' %}" />
     <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />
     <script type="text/javascript" src="{% static 'ecom/js/jquery-3.3.1.min.js' %}"></script>
@@ -15,21 +17,19 @@
     <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
     <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<h1>
-	<b><Strong>{{request.user.username}}</Strong>でログイン中</b>
-</h1>
-<h2>
-	<b> <a href="logout/">ログアウト</a>
-</h2>
 <body>
+
+
+<div class="wrapper">
    <!--
    <img class="heder-img" src="{% static 'ecom/img/header_img.png' %}" style="width: 100%;">-->
   <!--
   <video id="bg-video" src="../static/ecom/img/t2r29-gzu41 (1) (1).mp4" poster="../static/ecom/img/t2r29-gzu41 (1) (1).gif" autoplay loop muted playsinline></video>
   -->
 <div id="player"></div>
-<script>    
+<script>
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -59,6 +59,7 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+
 function onPlayerReady(event) {
   event.target.mute();
   event.target.playVideo();
@@ -70,10 +71,8 @@ function onPlayerStateChange(event) {
   }
 }
 
-console.log("hello")
 
 </script>
-    
 <style>
     #player {
      position: fixed;
@@ -82,10 +81,7 @@ console.log("hello")
     z-index: -100;
     right: -104%;
     }
-    
-    .index-main-tables {
-    position: absolute;
-}
+
 </style>
   <header background-color:#e6e6fa>
      <svg viewbox="0 0 100 20">
@@ -95,7 +91,7 @@ console.log("hello")
       <stop offset="95%" stop-color="#123752"/>
     </linearGradient>
     <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
         <animateTransform
             attributeName="transform"
             begin="0s"
@@ -110,8 +106,15 @@ console.log("hello")
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#wave)"  fill-opacity="0.6">DeM-iON</text>
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeM-iON</text>
    </svg>
-    <a href="{% url 'pay' %}" class="btn-circle-border-double">決済へ</a><br>
       </header>
+      <div>
+        <h1>
+         <b><Strong>{{request.user.username}}</Strong>でログイン中</b>
+        </h1>
+        <h2>
+         <b> <a href="logout/">ログアウト</a>
+        </h2>
+      </div>
    <div class="index-main-tables">
     {% for product in products %}
    <div class="index-table">
@@ -122,5 +125,57 @@ console.log("hello")
    </div>
     {% endfor %}
    </div>
+   <footer>
+     <div class="footer_buttnos">
+     <ul>
+       <a href="{% url 'pay' %}" class="cart_button" id="cart"><i class="fas fa-shopping-cart"></i><li>カート</li></a>
+       <a href="{% url 'payf' %}" class="money_button" id="money"><i class="fas fa-money-check"></i><li>決済</li></a>
+       <div onclick="wallet()">
+            <div class="icon_wallet_clo dis_no" id="wallet_clo"><i class="fas fa-bars"></i></div>
+            <div class="icon_wallet_op" id="wallet_op"><i class="fas fa-times"></i></div>
+       </div>
+     </ul>
+   </div>
+ </footer>
+ <script>
+ var wallet_op = document.getElementById('wallet_op');
+ var wallet_clo = document.getElementById('wallet_clo');
+ var money = document.getElementById('money');
+ var cart = document.getElementById('cart');
+ var count = 0;
+ var count_div = 0;
+
+ function wallet(){
+   count += 1;
+   count_div = count % 2;
+    /*console.log(count);*/
+   console.log(count_div);
+if(count_div == 1){
+  wallet_op.classList.add('dis_no');
+  wallet_clo.classList.remove('dis_no');
+  money.classList.add('active');
+  money.removeAttribute("href");
+  cart.classList.add('active');
+  cart.removeAttribute("href");
+}
+else{
+  wallet_clo.classList.add('dis_no');
+  wallet_op.classList.remove('dis_no');
+  money.classList.remove('dis_no');
+  cart.classList.remove('dis_no');
+  money.classList.remove('active');
+  cart.classList.remove('active');
+  money.setAttribute("href","{% url 'payf' %}");
+  cart.setAttribute("href","{% url 'pay' %}");
+}
+ }
+
+ Pace.on('done', function(){
+
+             $('.wrapper').fadeIn();
+
+         });
+ </script>
+</div>
 </body>
 </html>
