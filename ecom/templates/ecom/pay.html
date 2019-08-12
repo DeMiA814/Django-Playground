@@ -1,97 +1,22 @@
-﻿{% load static %}
 <!doctype html>
 <html lang="ja">
-<head>
-    <link rel="stylesheet" type ="text/css"
-          href="{% static 'ecom/css/style.css' %}" />
-    <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</head>
-<body class="pay-body">
-    <header background-color:#e6e6fa>
-     <svg viewbox="0 0 100 20">
-   <defs>
-    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="5%" stop-color="#326384"/>
-      <stop offset="95%" stop-color="#123752"/>
-    </linearGradient>
-    <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
-        <animateTransform
-            attributeName="transform"
-            begin="0s"
-            dur="1.5s"
-            type="translate"
-            from="0,0"
-            to="40,0"
-            repeatCount="indefinite" />
-      </path>
-    </pattern>
-   </defs>
-   <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#wave)"  fill-opacity="0.6">DeM-iON</text>
-   <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeM-iON</text>
-   </svg>
-      </header>
-    <p class="anataga">カートに入っている商品</p>
-    <div class = "paymentDetails">
-	</div>
-    <div class="pay-below">
-    <p class="goukei">合計金額は</p>
-    <p class="pay-money">0円</p>
-    <p class="desu">です。</p><br>
-    </div>
-<p class = "userName" id = "userName" style ="display: none">{{ cart.person }}</p>
-
-
-<br><a href='payf.html' style="text-decoration : none;"><input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" value="カードでお支払い"></a>
-       
-<br> <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
-
-
-
-<script>
-	
-	let userName = $('#userName')[0].textContent.trim();
-	let products = JSON.parse(localStorage.getItem(userName + "_products"));
-	let price = localStorage.getItem(userName+"_price");
-	
-	if (!price)
-		price = 0;
-	else
-		price = Number(JSON.parse(price));
-	$('.pay-money').text(price+'円');
-	
-	
-	for (var key in products)
-		{
-			if (products.hasOwnProperty(key)) {
-				$('.paymentDetails').append(`<div class="pay-content">
-				<img class="pay-img"  src="${ products[key].imgSrc }">
-    				<p class = "productName">${ products[key].name }</p>
-    				<p class = "productQuantity">${ products[key].quantity }</p>
-    				<p><a class ="returnProduct" name = "${ products[key].name }" href="./product.html?product=${ products[key].name }&restart=true" >変更する</a></p>	
-				</div>`);
-				
-		
-			}
-	
-	
-	
-}
-	$('.returnProduct').click((event) => {
-		let productId = event.target.name.trim();
-		let products = JSON.parse(localStorage.getItem(userName + '_products'));
-		let price = Number(JSON.parse(localStorage.getItem(userName + '_price')));
-		price -= Number(products[productId].quantity) * Number(products[productId].price);
-		products[productId].quantity = 0;
-		localStorage.setItem(userName+ "_price", JSON.stringify(price));
-		localStorage.setItem(userName + "_products", JSON.stringify(products));
-		
-		})		
-</script>
-
-
-
-	
+<head></head>
+<body>
+    <p>pay</p>
+    <p>あなたがカートに入れた商品は</p>
+    {% for item in items %}
+    <p>＞＞{{ item.product }} {{ item.in_cart }}本</p>
+    {% endfor %}
+    <p>合計金額は</p>
+    <p>＞＞{{ cart.money }}円</p>
+    <p>です。</p><br>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" name="button_2" value="決済する"><br>
+    </form>
+    {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+    {% endfor %}
+    <a href="/ecom/">まだ買い物を続ける</a>
 </body>
 </html>
