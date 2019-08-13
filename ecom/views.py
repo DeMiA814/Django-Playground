@@ -33,13 +33,13 @@ def index(request):
         'products':products,
     }
     if request.user.is_authenticated:
-        
+
         return render(request, 'ecom/index1.html', params)
     else:
         pay.items_in_cart=0
         return render(request, 'ecom/indexlo.html', params)
-        
-        
+
+
 
 
 """def login(request):
@@ -58,15 +58,15 @@ def authentication(request):
     form.add_error(None, '入力内容が違います。')
 """
 def product(request):
-    
+
    if (request.user.is_authenticated):
         cart = get_cart(request)
         number = 0
         product_name = request.GET.get('product')
-    
+
         product = Item.objects.get(product=product_name)
-        #cart.item=product
-    
+        cart.item=product
+
         params = {
             'product':product,
             'form':Product_form(),
@@ -83,15 +83,15 @@ def product(request):
             cart.money=cart.money+tot
             cart.save()
             item_in_cart = Item.objects.exclude(in_cart=0)
-        #total_price=0  
+        #total_price=0
         #for item in item_in_cart:
          #   total_price = item.in_cart * item.price
           #  cart.money += total_price
            # cart.save()
-        
+
             product.save()
-        
-    
+
+
         return render(request, 'ecom/product.html', params)
    else:
       # messages.add_message(request, messages.INFO, 'login to proceed')
@@ -104,20 +104,20 @@ def pay(request):
         cart = get_cart(request)
         #item_in_cart = Item.objects.exclude(in_cart=0)
         item_in_cart = Item.objects.exclude(in_cart=0)
-        #total_price = 0   
+        #total_price = 0
         #for item in item_in_cart:
          #   total_price += item.in_cart * item.price
         #cart.money = total_price
         #cart.save()
-       
-        
+
+
         params = {
             'items':item_in_cart,
-            'cart':cart,     
+            'cart':cart,
         }
-       
+
         '''if (request.method == 'POST' ):
-            
+
             tmp = {}
             for item in item_in_cart:
                 tmp[item.product] = item.in_cart
@@ -125,18 +125,18 @@ def pay(request):
                 item.save()
                 #cart.item.in_cart=0
                 #cart.item={}
-                
-            
+
+
             cart.money = 0
             cart.save()
             history = History()
             person=Person.objects.get(name=request.user.username)
             history.name=person
             history.item = tmp
-            
+
             #for history in History:
             history.save()
-            
+
            # messages.success(request, '決済完了')
             return redirect(to='/ecom/pay.html')
             '''
@@ -154,23 +154,23 @@ def get_cart(request):
         username = request.user.username
         cart = Cart.objects.get(person=username)
         #cart = Cart(request,00)
-        
+
         return cart
 
 
-  
+
 
 
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        
+
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-        
+
             person=Person.objects.create(name=username,password=raw_password,e_mail="abc@ddd.com")
             person.save()
             cart=Cart.objects.create(person=username)
@@ -182,9 +182,8 @@ def signup(request):
            # p.save(force_insert=True)
             #model.Person.username= (username=username, password=raw_password)
             login(request, user)
-            
+
             return redirect('index')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
-

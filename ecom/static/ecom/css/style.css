@@ -18,6 +18,10 @@ header a {
     bottom: 0%;
     right: 0;}
 
+.blank_top{
+  height:150px;
+}
+
 .index-main-tables {
     overflow: hidden;
     margin-bottom: 150px;
@@ -112,7 +116,18 @@ float:left;
   transform: translateX(600px);
   opacity:0;
 }
-
+.btn_up_act{
+  -webkit-transform: translate(0, 23px) rotate(45deg);
+  -moz-transform: translate(0, 23px) rotate(45deg);
+}
+.btn_un_act{
+  -webkit-transform: translate(0, -21px) rotate(-45deg);
+  -moz-transform: translate(0, -21px) rotate(-45deg);
+}
+.log_act{
+  transform: translateY(150px);
+  opacity:0;
+}
 .footer_buttnos{
     position: fixed;
     bottom: 155px;
@@ -153,10 +168,21 @@ a.cart_button {
     margin-bottom: -139px;
     transition: all 0.3s;
 }
-.fa-times {
-    font-size: 80px;
-    color: white;
-    margin-top: 11px;
+.icon_button_upper{
+    height: 10px;
+    background: white;
+    width: 75px;
+    margin-left: 22px;
+    margin-top: 32px;
+    transition: all 0.3s;
+}
+.icon_button_under{
+    height: 10px;
+    background: white;
+    width: 75px;
+    margin-left: 22px;
+    margin-top: 35px;
+    transition: all 0.3s;
 }
 .icon_wallet_op{
     position: absolute;
@@ -167,23 +193,6 @@ a.cart_button {
     margin-left: 80%;
     border: 3px solid white;
     border-radius: 50%;
-}
-.icon_wallet_clo{
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    margin-right: 4%;
-    text-align: center;
-    margin-left: 80%;
-    border: 3px solid white;
-    border-radius: 50%;
-}
-.fa-bars {
-    float: right;
-    font-size: 80px;
-    color: white;
-    margin-right: 20px;
-    margin-top: 20px;
 }
 .dis_no{
   display: none;
@@ -233,7 +242,7 @@ a.cart_button {
   transform: rotateY(360deg);
 }
 
-.wrapper{
+.wrapperloading{
   display: none;
 }
 
@@ -309,4 +318,39 @@ button:hover{
   border:1px solid #666666;
   background:#666666;
   color:#ffffff;
+}
+
+.login_pop{
+  position: relative;
+  display: inline-block;
+  padding: 7px 10px;
+  color: #555;
+  font-size: 16px;
+  background: #e0e5ff;
+  border-radius: 100px;
+  margin-left: 60%;
+  margin-bottom: 1%;
+  width: 35%;
+  height: 120px;
+  transition: all 0.3s;
+}
+
+.login_pop:before{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 72%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+.login_pop h1{
+  margin-left: 10%;
+  margin-top: 3%;
+  font-size: 28px;
+}
+
+.login_pop h2{
+  margin-left: 13%;
 }
