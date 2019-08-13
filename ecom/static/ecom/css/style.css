@@ -233,7 +233,7 @@ a.cart_button {
   transform: rotateY(360deg);
 }
 
-.wrapper{
+.wrapperloading{
   display: none;
 }
 
