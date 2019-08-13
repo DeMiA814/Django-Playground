@@ -2,25 +2,95 @@
 <!doctype html>
 <html lang="ja">
 <head>
- <link rel="stylesheet" type ="text/css"
+    <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />
+    <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
-<body>
-    <img src="{{ product.picture }}" alt="prodcutimg">
-    <p>product</p>
-    <p>{{ product.product }}</p>
-    <p>{{ product.price }}円</p>
-    <p>{{ product.description }}</p>
-    
+<body class="product-body">
+    <header background-color:#e6e6fa>
+     <svg viewbox="0 0 100 20">
+   <defs>
+    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="5%" stop-color="#326384"/>
+      <stop offset="95%" stop-color="#123752"/>
+    </linearGradient>
+    <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+        <animateTransform
+            attributeName="transform"
+            begin="0s"
+            dur="1.5s"
+            type="translate"
+            from="0,0"
+            to="40,0"
+            repeatCount="indefinite" />
+      </path>
+    </pattern>
+   </defs>
+   <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#wave)"  fill-opacity="0.6">DeM-iON</text>
+   <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeM-iON</text>
+   </svg>
+      </header>
+    <p class="product-img"><img src="{{ product.picture }}"></p>
 
-<br>
-<form method="post">
+
+
+<div class="product-form">
+    <form method="post">
     {% csrf_token %}
+    <div class="product-input">
     {{ form }}
-    <input type="submit" name="button_1" value="カートへ入れる"><br>
-</form>
-<a href="/ecom/">商品一覧へ</a>
-<a href="pay.html">決済へ</a>
+    </div>
+    <p class="product-price">{{ product.price }}円 / 本</p>
+    <div class="popup-overlay">
+     <div class="popup-content">
+        <h2>商品をカートに追加しました！</h2>
+        <p> 商品追加ありがとうございます。まだまだお買い物を楽しんでくださいませ！！</p>
+        <button class="close">Close</button>
+     　</div>
+    </div>
+    <input type="submit" name="button_1" value="カートへ入れる" class="open"><br>
+        <!--
+        <script type="text/javascript" src="{% static 'ecom/js/jquery-3.3.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'ecom/js/popup.js' %}"></script>
+        -->
+    </form>
+    <a href="pay.html" class="btn-square-shadow">決済へ</a>
+    <a href="/ecom/" class="btn-square-shadow">商品一覧へ</a>
+</div>
+
+<div class="product-contents">
+    <p class="product-name">{{ product.product }}</p>
+    <p class="product-text">{{ product.description }}</p>
+</div>
+<p class = "userName" id = "userName" style = "display: none"> {{ cart.person }} </p>
+<p class = "price" id = "price" style = "display: none"> {{ product.price }} </p>
+<script>
+	let userName = $('#userName')[0].textContent.trim();
+	let products = JSON.parse(localStorage.getItem(userName + "_products"));
+	if (!products) 
+		products = {};
+	$('.open').click((event) => {
+		let productName = $('.product-name')[0].textContent;
+		let productId = productName.trim();
+		let productQuantity = Number($('#id_number')[0].value);
+		let productPrice = Number($('#price')[0].textContent);
+		let imageSrc = $('.product-img').find('img')[0].src;
+		if (!products[productId])
+			products[productId] = {name: productName, quantity: 0, price: productPrice, imgSrc: imageSrc};
+		products[productId].quantity += productQuantity;
+		localStorage.setItem(userName + "_products", JSON.stringify(products));	
+		let price = localStorage.getItem(userName+ "_price");
+		if (price === "0" || !price)
+			price = 0;
+		else
+	                price= Number(JSON.parse(price));	
+		price += productQuantity * productPrice;
+		localStorage.setItem(userName+ "_price", JSON.stringify(price));				
+})
+	
+</script>
 </body>
 </html>
 
