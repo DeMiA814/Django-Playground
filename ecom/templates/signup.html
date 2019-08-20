@@ -111,7 +111,7 @@ img {
 body {
   background: #ccdcdf ;
   /* fallback for old browsers */
- 
+
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
@@ -204,7 +204,7 @@ input.email, input.text.w3lpass {
 }
 
 input[type="submit"] {
-  font-size: .9em;
+  font-size: 33px !important;
   color: #fff;
   background: #76b852;
   outline: none;
@@ -212,8 +212,8 @@ input[type="submit"] {
   cursor: pointer;
   padding: 0.9em;
   -webkit-appearance: none;
-  width: 100%;
-  margin: 2em 0;
+  width: 90%;
+  margin: 0 5%;
   letter-spacing: 4px;
 }
 
@@ -565,6 +565,7 @@ input.checkbox:checked:after {
 @media(max-width:1024px) {
   .main-agileinfo {
     width: 49%;
+    height: 700px;
   }
 }
 
@@ -611,7 +612,7 @@ input.checkbox:checked:after {
     padding: 2.2em;
   }
 
-  
+
 
   input[type="submit"] {
     margin: 2em 0;
@@ -756,15 +757,33 @@ input.checkbox:checked:after {
     padding: 1em 0 0;
   }
 }
+
+.btn-square
+{
+  display: block;
+  text-align: center;
+  font-size: 33px;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-radius: 3px;
+  clear:both;
+  height: 100px;
+  line-height: 100px;
+  width: 90%;
+  margin: 20px 5%;
+}
+
+
 </style>
 
- 
-  
- 
+
+
+
 
  <form method="post">
- 
-   {% csrf_token %} 
+
+   {% csrf_token %}
 
 <div class="main-w3layouts wrapper">
 		<h1><Strong><font color="#0f1010">会員登録</font><Strong></h1>
@@ -772,7 +791,7 @@ input.checkbox:checked:after {
 			<div class="agileits-top">
 				<form action="#" method="post">
 					<input class="text" type="text" name="username" placeholder="ユーザー名:" required="">
-					
+
 					<input class="text" type="password" name="password1" placeholder="パスワード:" required="">
 					<input class="text w3lpass" type="password" name="password2" placeholder="パスワード再入力:" required="">
 
@@ -782,11 +801,11 @@ input.checkbox:checked:after {
 						<div class="clear"> </div>
 					</div>
 					<input type="submit" style="font-size: 1.5em"; value="登録">
-
+          <a href="/ecom/index" class="btn-square">戻る</a>
 
  </form>
 
-    
+
 
 
 {%endblock%}

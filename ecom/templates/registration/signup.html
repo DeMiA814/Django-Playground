@@ -10,7 +10,7 @@
 {
  	body {
     text-align: center;
-	} 
+	}
 	.container
 	{
      position: absolute;
@@ -22,8 +22,8 @@
 	.idPassword {
 	margin-left: 5%
 	}
-	ul {	
-	
+	ul {
+
 	margin-left: 43%;
         text-align:left;
 	}
@@ -34,7 +34,7 @@
 
 	body {
     text-align: center;
-	} 
+	}
 	.container
 	{
     	 position: absolute;
@@ -46,25 +46,25 @@
 	.idPassword {
 	margin-left: 5%
 	}
-	ul {	
-	
+	ul {
+
 	margin-left: 43%;
         text-align:left;
 	}
 	.taba { margin-left: 28%; }
-
+  
 </style>
 
- 
+
   <h1><Strong>会員登録<Strong></h1>
- 
+
 
  <form method="post">
- 
-   {% csrf_token %} 
-	
+
+   {% csrf_token %}
+
      <p><label for="id_username">ユーザー名:</label>
- <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username";style="float:left"> 
+ <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username";style="float:left">
 <br>
 <p class="tab">150文字以内の数字及び英文字または以下の記号のみ有効です。@/./+/-/_</p>
 
@@ -77,10 +77,9 @@
 <br></p>
 
 <p class="taba"> 確認のため、再びパスワードを入力してください</p>    <button type="submit">登録</button>
- 
  </form>
 
-    
+
 
 
 {%endblock%}

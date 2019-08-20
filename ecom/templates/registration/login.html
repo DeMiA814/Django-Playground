@@ -113,7 +113,7 @@ img {
 body {
   background: #ccdcdf ;
   /* fallback for old browsers */
- 
+
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
@@ -206,7 +206,8 @@ input.email, input.text.w3lpass {
 }
 
 input[type="submit"] {
-  font-size: 1em;
+  font-size: 33px !important;
+  font-weight: bold;
   color: #fff;
   background: #76b852;
   outline: none;
@@ -613,7 +614,7 @@ input.checkbox:checked:after {
     padding: 2.2em;
   }
 
-  
+
 
   input[type="submit"] {
     margin: 2em 0;
@@ -758,6 +759,23 @@ input.checkbox:checked:after {
     padding: 1em 0 0;
   }
 }
+.btn-square
+{
+  display: block;
+  text-align: center;
+  font-size: 33px;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  clear:both;
+  height: 100px;
+  line-height: 100px;
+  margin-top: 20px;
+  width: 100%;
+}
+
 </style>
 
 
@@ -767,7 +785,7 @@ input.checkbox:checked:after {
 
 
 <form method="post">
-  
+
 {% csrf_token %}
 
 <div class="main-w3layouts wrapper">
@@ -776,7 +794,7 @@ input.checkbox:checked:after {
 			<div class="agileits-top">
 				<form action="#" method="post">
 					<input class="text" type="text" name="username"  autofocus=""placeholder="ユーザー名:" required="" id="id_username">
-					
+
 					<input class="text" type="password" name="password" placeholder="パスワード:" required=""  id="id_password">
 
 <input type="submit" style="font-size: 1.5em"; value="ログイン">
@@ -792,6 +810,7 @@ input.checkbox:checked:after {
   <button type="submit">ログイン</button>
 -->
 </form>
+<a href="/ecom/index" class="btn-square">戻る</a>
 
-  
-{%endblock%}  
+
+{%endblock%}
