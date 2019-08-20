@@ -160,6 +160,7 @@ PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/ecom/'
+PWA_SERVICE_WORKER_PATH = "https://ec-akademia.herokuapp.com/serviceworker.js"
 PWA_APP_ICONS = [
     {
         'src': '/static/ecom/img/バットのアイコン素材.png',
