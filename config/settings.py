@@ -39,18 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ecom',
     'payments.apps.PaymentsConfig',
+    'pwa',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -140,7 +141,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    
+
 )
 LOGIN_REDIRECT_URL = '/ecom/index'
 LOGOUT_REDIRECT_URL = '/ecom/index'
@@ -151,3 +152,25 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+PWA_APP_NAME = 'Demion'
+PWA_APP_DESCRIPTION = "EC site"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/ecom/'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/ecom/img/バットのアイコン素材.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/splash-640x1136.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'ja'

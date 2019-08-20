@@ -1,7 +1,10 @@
 {% load static %}
+{% load pwa %}
+
 <!doctype html>
 <html lang="ja">
 <head>
+    {% progressive_web_app_meta %}
     <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />
     <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
@@ -37,49 +40,65 @@
 
 
 <div class="product-form">
-    <form method="post">
+  <form name='product_form' method="POST">
     {% csrf_token %}
+    <p class="product-name">{{ product.product }}</p>
+    <p class="product-price">{{ product.price }}円 / 本</p>
     <div class="product-input">
     {{ form }}
     </div>
-    <p class="product-price">{{ product.price }}円 / 本</p>
-    <div class="popup-overlay">
-     <div class="popup-content">
+    <!-- <div class="popup-overlay" >
+     <div class="popup-content" >
         <h2>商品をカートに追加しました！</h2>
         <p> 商品追加ありがとうございます。まだまだお買い物を楽しんでくださいませ！！</p>
         <button class="close">Close</button>
-     　</div>
-    </div>
-    <input type="submit" name="button_1" value="カートへ入れる" class="open"><br>
+     </div>
+    </div> -->
+    <!-- <input type="submit" name="button_1" value="カートへ入れる" class="open"><br> -->
+      <p><a id="submit_btn" class="modalOpen btn-square-shadow">カートへ入れる</a></p>
+       <div class="modal" id="modal02">
+         <div class="overLay modalClose"></div>
+         <div class="inner">
+         <a href="" class="modalClose">×</a>
+         <h2 id="modal_text"></h2>
+         <p>ほんとによろしいですか？ </p>
+         <input type="submit" class="open btn-square-shadow-modal" value='いいよ'>
+         <button class="modalClose">だめよ</button>
+         </div>
+       </div>
+    </form>
         <!--
         <script type="text/javascript" src="{% static 'ecom/js/jquery-3.3.1.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'ecom/js/popup.js' %}"></script>
         -->
-    </form>
     <a href="pay.html" class="btn-square-shadow">決済へ</a>
-    <a href="/ecom/" class="btn-square-shadow">商品一覧へ</a>
 </div>
 
 <div class="product-contents">
-    <p class="product-name">{{ product.product }}</p>
+    <h2>詳細</h2>
     <p class="product-text">{{ product.description }}</p>
+</div>
+<div class="rebtn">
+  <a href="/ecom/" class="btn-circle-stitch">商品一覧</a>
 </div>
 <p class = "userName" id = "userName" style = "display: none"> {{ cart.person }} </p>
 <p class = "price" id = "price" style = "display: none"> {{ product.price }} </p>
 <script>
 	let userName = $('#userName')[0].textContent.trim();
 	let products = JSON.parse(localStorage.getItem(userName + "_products"));
+  console.log(products);
 	if (!products)
 		products = {};
 	$('.open').click((event) => {
 		let productName = $('.product-name')[0].textContent;
 		let productId = productName.trim();
+    console.log(Number($('#id_number')[0].value));
 		let productQuantity = Number($('#id_number')[0].value);
 		let productPrice = Number($('#price')[0].textContent);
 		let imageSrc = $('.product-img').find('img')[0].src;
 		if (!products[productId])
 			products[productId] = {name: productName, quantity: 0, price: productPrice, imgSrc: imageSrc};
-		products[productId].quantity += productQuantity;
+		products[productId].quantity = productQuantity;
 		localStorage.setItem(userName + "_products", JSON.stringify(products));
 		let price = localStorage.getItem(userName+ "_price");
 		if (price === "0" || !price)
@@ -88,7 +107,27 @@
 	                price= Number(JSON.parse(price));
 		price += productQuantity * productPrice;
 		localStorage.setItem(userName+ "_price", JSON.stringify(price));
-})
+    });
+
+  $(function(){
+    $("#submit_btn").click(function(){
+      let number = document.product_form.number;
+      let num = number.selectedIndex;
+      document.getElementById("modal_text").textContent = "{{ product.product }}を" + String(num) + "本カートへ追加します";
+      $('#modal02').show();
+    });
+    $(".modalClose").click(function(){
+      $('#modal02').hide();
+     // var parentsID = $(this).parents(".modal").attr("id");
+     // if(parentsID === "modal02") {
+     //   $(this).parents(".modal").children(".inner").css("animation","modalClose 0.5s forwards");
+     // }
+     // $(this).parents(".modal").fadeOut();
+     // $(".modalOpen").removeClass("open");
+     // return false;
+    });
+  });
+
 
 </script>
 </body>

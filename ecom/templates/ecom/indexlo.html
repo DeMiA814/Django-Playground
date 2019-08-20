@@ -1,34 +1,37 @@
 ﻿{% load static %}
+{% load pwa %}
+
 <!doctype html>
 <html lang="ja">
 <head>
+    {% progressive_web_app_meta %}
     <link rel="stylesheet" type ="text/css"
-          href="{% static 'ecom/css/style.css' %}" />
+          href="{% static 'ecom/css/style0.css' %}" />
     <script type="text/javascript" src="{% static 'ecom/js/jquery-3.3.1.min.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script type="text/javascript" src="{% static 'ecom/js/bas.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/OrbitControls-2.js' %}"></script>
-    <!--<script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>-->
+    <!--<script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script
     <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
     <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
 </head>
 
-   <style type =>
+   <style type =>¡
 
 .btn-square-shadow pay-kessai {
     height:15%;
     width:15%;}
-</style>             
-<span>           
+</style>
+<span>
 
-<a href='login/' style="text-decoration : none;display: inline-block;float: right;height: 25px ;width:55%"><input type="submit" display: 　 name="button_2"  style="width:50%"   class="btn-square-shadow pay-kessai" value="ログイン"></a>
-	 
-<a href='signup/' style="text-decoration : none;display: inline-block;float: right;height: 20px"><input type="submit"　 name="button_2" style="width:20px" class="btn-square-shadow pay-kessai" value="登録はこちらから"></a>
-	
+<a href='login/' style="text-decoration : none;display: inline-block;float: right;height: 25px ;width:55%"><input type="submit" display:  name="button_2"  style="width:50%"   class="btn-square-shadow pay-kessai" value="ログイン"></a>
+
+<a href='signup/' style="text-decoration : none;display: inline-block;float: right;height: 20px"><input type="submit" name="button_2" style="width:20px" class="btn-square-shadow pay-kessai" value="登録はこちらから"></a>
+
 </span>
 
 <body>
@@ -38,10 +41,10 @@
   <video id="bg-video" src="../static/ecom/img/t2r29-gzu41 (1) (1).mp4" poster="../static/ecom/img/t2r29-gzu41 (1) (1).gif" autoplay loop muted playsinline></video>
  -->
  <div id="player"></div>
-<script>    
+<script>
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
+];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
@@ -82,7 +85,7 @@ function onPlayerStateChange(event) {
 console.log("hello")
 
 </script>
-    
+
 <style>
     #player {
      position: fixed;
@@ -91,7 +94,7 @@ console.log("hello")
     z-index: -100;
     right: -104%;
     }
-    
+
     .index-main-tables {
     position: absolute;
 }
@@ -104,7 +107,7 @@ console.log("hello")
       <stop offset="95%" stop-color="#123752"/>
     </linearGradient>
     <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
         <animateTransform
             attributeName="transform"
             begin="0s"
@@ -119,7 +122,7 @@ console.log("hello")
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#wave)"  fill-opacity="0.6">DeM-iON</text>
    <text text-anchor="middle" x="50" y="15" font-size="18" fill="url(#gradient)" fill-opacity="0.1">DeM-iON</text>
    </svg>
-    <a href="{% url 'pay' %}" class="btn-circle-border-double">決済へ</a><br>
+
       </header>
    <div class="index-main-tables">
     {% for product in products %}
@@ -131,5 +134,67 @@ console.log("hello")
    </div>
     {% endfor %}
    </div>
+   <footer>
+     <div class="footer_buttnos">
+     <!-- <div class="login_pop" id="logpop">
+       <h1>
+        <Strong>{{request.user.username}}</Strong>でログイン中
+       </h1>
+       <h2>
+         ログアウトは<a href="logout/">こちら</a>から
+       </h2>
+     </div> -->
+     <!-- <ul> -->
+       <!-- <a href="{% url 'pay' %}" class="member_button" id="member"><li>会員登録</li></a> -->
+       <a href='signup/'  id="member" class="member_button">
+         <input type="submit" name="button_2"value="会員登録"></a>
+       <!-- <a href="{% url 'payf' %}" class="login_button" id="login"><li>ログイン</li></a> -->
+       <a href='login/' id="login" class="login_button">
+         <input type="submit" name="button_2"value="ログイン"></a>
+       <div onclick="wallet()">
+            <div class="icon_wallet_op" id="wallet_op">
+               <div class="icon_button_upper btn_up_act" id="button_upper"></div>
+               <div class="icon_button_under btn_un_act" id="button_under"></div>
+            </div>
+       </div>
+     <!-- </ul> -->
+   </div>
+ </footer>
+ <script>
+ // var login_pop = document.getElementById('logpop');
+ var wallet_op = document.getElementById('button_upper');
+ var wallet_clo = document.getElementById('button_under');
+ var login = document.getElementById('login');
+ var member = document.getElementById('member');
+ var count = 0;
+ var count_div = 0;
+
+ function wallet(){
+   count += 1;
+   count_div = count % 2;
+    /*console.log(count);*/
+   console.log(count_div);
+if(count_div == 1){
+  // logpop.classList.add('log_act');
+  button_upper.classList.remove('btn_up_act');
+  button_under.classList.remove('btn_un_act');
+  login.classList.add('active');
+  login.removeAttribute("href");
+  member.classList.add('active');
+  member.removeAttribute("href");
+}
+else{
+  // logpop.classList.remove('log_act');
+  button_upper.classList.add('btn_up_act');
+  button_under.classList.add('btn_un_act');
+  login.classList.remove('dis_no');
+  member.classList.remove('dis_no');
+  login.classList.remove('active');
+  member.classList.remove('active');
+  login.setAttribute("href","{% url 'payf' %}");
+  member.setAttribute("href","{% url 'pay' %}");
+}
+};
+ </script>
 </body>
 </html>

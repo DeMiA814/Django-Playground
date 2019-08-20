@@ -62,34 +62,36 @@ def product(request):
    if (request.user.is_authenticated):
         cart = get_cart(request)
         number = 0
+        buy_num = 0
         product_name = request.GET.get('product')
-
         product = Item.objects.get(product=product_name)
         cart.item=product
-
-        params = {
-            'product':product,
-            'form':Product_form(),
-            'number':number,
-            'cart':cart,
-            }
+        print("check")
 
         if request.method == 'POST':
+            print("check2")
             num = request.POST['number']
-            params['number'] = num
+            buy_num = request.POST['number']
             product.in_cart = num
             cart = get_cart(request)
             tot=int(product.in_cart)*int(product.price)
             cart.money=cart.money+tot
             cart.save()
             item_in_cart = Item.objects.exclude(in_cart=0)
-        #total_price=0
-        #for item in item_in_cart:
-         #   total_price = item.in_cart * item.price
-          #  cart.money += total_price
-           # cart.save()
-
+            #total_price=0
+            #for item in item_in_cart:
+            #   total_price = item.in_cart * item.price
+            #  cart.money += total_price
+            # cart.save()
             product.save()
+
+        params = {
+            'product':product,
+            'form':Product_form(),
+            # 'number':num,
+            'cart':cart,
+            'buy_num':buy_num,
+            }
 
 
         return render(request, 'ecom/product.html', params)

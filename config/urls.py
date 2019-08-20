@@ -19,11 +19,13 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from ecom import views
+from django.conf.urls import url, include
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('ecom/', include('ecom.urls')),
     path('ecom/payf.html', include('payments.urls')),
-    
+    url('', include('pwa.urls')),
 ]

@@ -21,7 +21,7 @@ body{
   font-family:"Yu Gothic","Meiryo";
 }
 header{
-  height: 13%;
+  height: 10%;
 }
 svg{
   position:fixed;z-index: -1;
@@ -113,22 +113,7 @@ body.product-body {
 select#id_number option {
   font-size: 15px !important;
 }
-input[type="submit"] {
-  width: 100%;
-  margin-top: 85px;
-  margin-bottom: 10px;
-  display: block;
-  text-align: center;
-  font-size: 33px;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
-  clear:both;
-  height: 100px;
-}
+
 input[type="submit"]:active {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
@@ -266,7 +251,7 @@ a.cart_button {
 }
 .icon_button_upper{
     height: 10px;
-    background: white;
+    background: black;
     width: 75px;
     margin-left: 22px;
     margin-top: 32px;
@@ -274,7 +259,7 @@ a.cart_button {
 }
 .icon_button_under{
     height: 10px;
-    background: white;
+    background: black;
     width: 75px;
     margin-left: 22px;
     margin-top: 35px;
@@ -287,8 +272,9 @@ a.cart_button {
     margin-right: 4%;
     text-align: center;
     margin-left: 80%;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 50%;
+    bottom: -115px;
 }
 .dis_no{
   display: none;
@@ -310,7 +296,6 @@ a.cart_button {
   height: 100px;
   line-height: 100px;
   margin-top: 20px;
-  width: 100%;
 }
 .btn-square-shadow:active {
   -webkit-transform: translateY(4px);
@@ -506,7 +491,7 @@ a.login_button {
     background: rgba(217, 225, 233, 0.9);
     position: absolute;
     border-radius: 100px;
-    margin-left: 5%;
+    margin-left: 40%;
     transition: all 0.5s;
 }
 a.member_button {
@@ -521,4 +506,8 @@ a.member_button {
     background: rgba(217, 225, 233, 0.9);
     margin-bottom: -139px;
     transition: all 0.3s;
+}
+input[type="submit" i]{
+  padding: 20px 0;
+  font-size: 30px;
 }

@@ -1,7 +1,9 @@
 {% load static %}
+{% load pwa %}
 <!doctype html>
 
 <head>
+    {% progressive_web_app_meta %}
     <link rel="stylesheet" href="{% static 'ecom/css/normalize.css' %}">
     <link rel="stylesheet" type ="text/css"
           href="{% static 'ecom/css/style.css' %}" />

@@ -1,7 +1,10 @@
 ﻿{% load static %}
+{% load pwa %}
+
 <!doctype html>
 <html lang="ja">
 <head>
+    {% progressive_web_app_meta %}
     <script src="{% static 'ecom/js/pace.min.js' %}"></script>
     <link rel="stylesheet" type ="text/css" href="{% static 'ecom/css/pace-theme-center-circle.min.css' %}" />
     <link rel="stylesheet" type ="text/css"
