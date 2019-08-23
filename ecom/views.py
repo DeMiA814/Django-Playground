@@ -24,6 +24,8 @@ import stripe
 
 from django.views.generic.base import TemplateView
 
+from .models import History
+
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -65,7 +67,7 @@ def product(request):
         buy_num = 0
         product_name = request.GET.get('product')
         product = Item.objects.get(product=product_name)
-        cart.item=product
+        cart.item = product
         print("check")
 
         if request.method == 'POST':
@@ -154,12 +156,18 @@ def get_cart(request):
     #username = None
     if request.user.is_authenticated:
         username = request.user.username
-        cart = Cart.objects.get(person=username)
+        cart = Cart.objects.get_or_create(person=username)
+        print(cart)
         #cart = Cart(request,00)
 
-        return cart
+        return cart[0]
 
-
+def history(request):
+    data = History.objects.filter(id=request.user.id)
+    params = {
+        'data':data,
+    }
+    return render(request, 'ecom/history.html', params)
 
 
 
@@ -168,6 +176,7 @@ def signup(request):
         form = UserCreationForm(request.POST)
 
         if form.is_valid():
+            print('ok')
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')

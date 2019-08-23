@@ -17,39 +17,41 @@ class PayView(TemplateView):
     #usernam = .user.username
     #return render('payf.html')
 
-     
 
-    
-        
+
+
+
     def get_context_data(self, **kwargs): # new
-        
+
         context = super().get_context_data(**kwargs)
+        print(self.request.user)
         usern=Person.objects.filter(name=self.request.user)
+        print(usern)
         use=usern[0]
         usn=use.name
         car=Cart.objects.get(person=usn)
         if car.money==0:
             messages.add_message(self.request, messages.INFO, 'Buy something to proceed.')
-        
+
         #car.money=0
         context= {'key':settings.STRIPE_PUBLISHABLE_KEY,
                       'User':usn,
                       'mon':car.money,
                       'nam':car.person,}
-        
-        
+
+
         return (context)
-        
 
 
-def charge(request): 
 
-    
-    usn=request.user.username 
+def charge(request):
+
+
+    usn=request.user.username
     car=Cart.objects.get(person=usn)
 
     if request.method == 'POST':
-        usn=request.user.username 
+        usn=request.user.username
         car=Cart.objects.get(person=usn)
        # money=request.session['cart_money']
         #mon=car[0]
@@ -60,15 +62,15 @@ def charge(request):
             description=usn,
             source=request.POST['stripeToken']
         )
-        
+
         item_in_cart = Item.objects.exclude(in_cart=0)
         tmp = {}
         for item in item_in_cart:
                  tmp[item.product] = item.in_cart
                  item.in_cart = 0
                  item.save()
-                 
-        car.money=0         
+
+        car.money=0
         car.save()
         history = History()
         person=Person.objects.get(name=request.user.username)
@@ -79,7 +81,3 @@ def charge(request):
                'mon':car.money,
                'nam':car.person,}
         return render(request, 'charge.html',cont)
-    
-
-
-    
