@@ -54,15 +54,12 @@
 
 <script>
 
-	let userName = $('#userName')[0].textContent.trim();
+  let userName = $('#userName')[0].textContent.trim();
 	let products = JSON.parse(localStorage.getItem(userName + "_products"));
-  console.log(products);
-	let price = localStorage.getItem(userName+"_price");
-
-	if (!price)
-		price = 0;
-	else
-		price = Number(JSON.parse(price));
+	let price = 0;
+	for (var item in products){
+		price += JSON.parse(localStorage[userName + "_products"])[item]["quantity"] * JSON.parse(localStorage[userName + "_products"])[item]["price"]
+    };
 	$('.pay-money').text(price+'円');
 
 

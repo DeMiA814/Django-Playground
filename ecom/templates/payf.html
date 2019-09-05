@@ -9,24 +9,16 @@
 	
 	let userName = $('#userName')[0].textContent.trim();
 	let products = JSON.parse(localStorage.getItem(userName + "_products"));
-	let price = localStorage.getItem(userName+"_price");
-	if (!price)
-		price = 0;
-	else
-		price = Number(JSON.parse(price));
-	$('.price').text({{mon}}+'円');
+	let price = 0;
+	for (var product in products){
+		price += JSON.parse(localStorage[userName + "_products"])[product]["quantity"] * JSON.parse(localStorage[userName + "_products"])[product]["price"]
+	};
+	$('.price').text(price+'円');
 
 	
 
 </script>
 
-
-<script>
-{% if messages %}
-	alert("何かご購入ください")
-	location.href="http://127.0.0.1:8000/ecom"
-{% endif %}
-</script>
   
 
  

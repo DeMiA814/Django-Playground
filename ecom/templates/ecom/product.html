@@ -100,13 +100,14 @@
 			products[productId] = {name: productName, quantity: 0, price: productPrice, imgSrc: imageSrc};
 		products[productId].quantity = productQuantity;
 		localStorage.setItem(userName + "_products", JSON.stringify(products));
-		let price = localStorage.getItem(userName+ "_price");
-		if (price === "0" || !price)
-			price = 0;
-		else
-	                price= Number(JSON.parse(price));
-		price += productQuantity * productPrice;
-		localStorage.setItem(userName+ "_price", JSON.stringify(price));
+		// let price = localStorage.getItem(userName+ "_price");
+		// if (price === "0" || !price)
+		// 	price = 0;
+		// else
+	  //   price= Number(JSON.parse(price));
+		// price += productQuantity * productPrice;
+    // console.log(price)
+		// localStorage.setItem(userName+ "_price", JSON.stringify(price));
     });
 
   $(function(){
