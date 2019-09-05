@@ -431,7 +431,7 @@ button:hover{
   margin-left: 60%;
   margin-bottom: 1%;
   width: 35%;
-  height: 120px;
+  height: 210px;
   transition: all 0.3s;
 }
 
@@ -453,6 +453,10 @@ button:hover{
 
 .login_pop h2{
   margin-left: 13%;
+}
+
+.login_pop a{
+  text-decoration: none;
 }
 
 .modal {
