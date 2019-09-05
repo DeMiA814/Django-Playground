@@ -116,6 +116,7 @@ function onPlayerStateChange(event) {
    <div class="index-table">
     <a href="{% url 'product' %}?product={{ product.product }}">
       <img src="{{ product.picture }}">
+      <!-- <img src="{% static 'ecom/img/1.png' %}"> -->
       <br>
       {{ product.product }}<br>
       <span>{{ product.price }}円</span><br>
