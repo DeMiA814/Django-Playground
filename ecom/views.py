@@ -163,7 +163,8 @@ def get_cart(request):
         return cart[0]
 
 def history(request):
-    data = History.objects.filter(id=request.user.id)
+    person = Person.objects.get(name=request.user)
+    data = History.objects.filter(name=person)
     params = {
         'data':data,
     }
