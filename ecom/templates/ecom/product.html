@@ -114,8 +114,11 @@
     $("#submit_btn").click(function(){
       let number = document.product_form.number;
       let num = number.selectedIndex;
+      if(num == 0){
+        alert('本数を選択してください')
+      } else{
       document.getElementById("modal_text").textContent = "{{ product.product }}を" + String(num) + "本カートへ追加します";
-      $('#modal02').show();
+      $('#modal02').show();}
     });
     $(".modalClose").click(function(){
       $('#modal02').hide();
