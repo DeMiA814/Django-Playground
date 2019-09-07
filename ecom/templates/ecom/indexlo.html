@@ -13,26 +13,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script type="text/javascript" src="{% static 'ecom/js/bas.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/OrbitControls-2.js' %}"></script>
-    <!--<script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script
+    <!--<script type="text/javascript" src="{% static 'ecom/js/hoge.js' %}"></script>-->
     <script type="text/javascript" src="{% static 'ecom/js/three.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/trackball_ctrl_r62.js' %}"></script>
     <script type="text/javascript" src="{% static 'ecom/js/pixel_particle.js' %}"></script>
     <link rel="shortcut icon" href="../static/ecom/img/ecom_img.ico" type="image/x-icon">
 </head>
 
-   <style type =>¡
+   <!-- <style type =>¡
 
 .btn-square-shadow pay-kessai {
     height:15%;
     width:15%;}
-</style>
-<span>
+</style> -->
+<!-- <span>
 
 <a href='login/' style="text-decoration : none;display: inline-block;float: right;height: 25px ;width:55%"><input type="submit" display:  name="button_2"  style="width:50%"   class="btn-square-shadow pay-kessai" value="ログイン"></a>
 
 <a href='signup/' style="text-decoration : none;display: inline-block;float: right;height: 20px"><input type="submit" name="button_2" style="width:20px" class="btn-square-shadow pay-kessai" value="登録はこちらから"></a>
 
-</span>
+</span> -->
 
 <body>
    <!--
@@ -40,36 +40,38 @@
   <!--
   <video id="bg-video" src="../static/ecom/img/t2r29-gzu41 (1) (1).mp4" poster="../static/ecom/img/t2r29-gzu41 (1) (1).gif" autoplay loop muted playsinline></video>
  -->
- <div id="player"></div>
-<script>
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '810',
-    width: '100%',
-    videoId: 'DXY3kiAonKA',
-    playerVars: {
-      playsinline:1,
-      loop:1,
-      controls:0,
-      iv_load_policy:3,
-      showinfo:0,
-      rel:0,
-      disablekb:1,
-      modestbranding:1,
-      wmode:'transparent'
-    },
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
+ <div id="player"></div>
+ <script>
+ var tag = document.createElement('script');
+ tag.src = "https://www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+ 
+ var player;
+ function onYouTubeIframeAPIReady() {
+   player = new YT.Player('player', {
+     height: '810',
+     width: '100%',
+     videoId: 'DXY3kiAonKA',
+     playerVars: {
+     playsinline:1,
+     loop:1,
+     controls:0,
+     iv_load_policy:3,
+     showinfo:0,
+     rel:0,
+     disablekb:1,
+     modestbranding:1,
+     wmode:'transparent'
+     },
+     events: {
+       'onReady': onPlayerReady,
+       'onStateChange': onPlayerStateChange
+     }
+   });
+ }
+ 
 
 function onPlayerReady(event) {
   event.target.mute();
