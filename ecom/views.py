@@ -26,6 +26,7 @@ from django.views.generic.base import TemplateView
 
 from .models import History
 
+import json
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -165,6 +166,7 @@ def get_cart(request):
 def history(request):
     person = Person.objects.get(name=request.user)
     data = History.objects.filter(name=person)
+
     params = {
         'data':data,
     }
