@@ -37,7 +37,7 @@
       </header>
     <p class="anataga">カートに入っている商品</p>
     <div class = "paymentDetails">
-	</div>
+	  </div>
     <div class="pay-below">
     <p class="goukei">合計金額は</p>
     <p class="pay-money">0円</p>
@@ -70,7 +70,8 @@
 				<img class="pay-img"  src="${ products[key].imgSrc }">
     				<p class = "productName">${ products[key].name }</p>
     				<p class = "productQuantity">${ products[key].quantity }</p>
-    				<p><a class ="returnProduct" name = "${ products[key].name }" href="./product.html?product=${ products[key].name }&restart=true" >変更する</a></p>
+            <p><a class ="returnProduct" name = "${ products[key].name }" href="./product.html?product=${ products[key].name }&restart=true" >変更する</a></p>
+            <p>取消</p>
 				</div>`);
 
 

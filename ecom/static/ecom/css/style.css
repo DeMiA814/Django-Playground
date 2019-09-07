@@ -189,6 +189,7 @@ body.pay-body {
 }
 .paymentDetails {
   float:left;
+  width:100%;
 }
 .paymentDetails .pay-content{
   float:left;
@@ -431,7 +432,7 @@ button:hover{
   margin-left: 60%;
   margin-bottom: 1%;
   width: 35%;
-  height: 210px;
+  height: 145px;
   transition: all 0.3s;
 }
 
@@ -525,4 +526,60 @@ a.member_button {
     background: rgba(217, 225, 233, 0.9);
     margin-bottom: -139px;
     transition: all 0.3s;
+}
+
+/* history.html */
+table{
+  width: 80%;
+  border-collapse:separate;
+  border-spacing: 0;
+  margin:10%;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.historyh2{
+  font-size: 40px;
+  margin-left: 5%;
 }
