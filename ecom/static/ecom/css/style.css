@@ -225,18 +225,21 @@ body.pay-body {
   transform: translateY(150px);
   opacity:0;
 }
-.footer_buttnos{
-    position: fixed;
-    bottom: 155px;
-    left: 0;
-    width: 100%;
-}
+
 ul{
   padding:0;
+  display: inline-flex;
+  width: 100%;
 }
 li{
   list-style: none;
   width:100%;
+}
+.footer_buttnos{
+  position: fixed;
+  bottom: 95px;
+  left: 0;
+  width: 100%;
 }
 a.money_button {
   /* 　float: left; */
@@ -249,11 +252,12 @@ a.money_button {
     background: rgba(217, 225, 233, 0.9);
     position: absolute;
     border-radius: 100px;
-    margin-left: 5%;
+    margin-left: 40%;
     transition: all 0.5s;
+    display: inline-block;
 }
 a.cart_button {
-    float: left;
+    /* float: left; */
     width: 35%;
     text-align: center;
     font-size: 40px;
@@ -264,6 +268,7 @@ a.cart_button {
     background: rgba(217, 225, 233, 0.9);
     margin-bottom: -139px;
     transition: all 0.3s;
+    display: inline-block;
 }
 .icon_button_upper{
     height: 10px;
@@ -287,9 +292,10 @@ a.cart_button {
     height: 120px;
     margin-right: 4%;
     text-align: center;
-    margin-left: 80%;
+    margin-left: 47%;
     border: 3px solid white;
     border-radius: 50%;
+    display: inline-block;
 }
 .dis_no{
   display: none;
