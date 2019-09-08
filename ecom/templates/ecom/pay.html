@@ -71,14 +71,11 @@
     				<p class = "productName">${ products[key].name }</p>
     				<p class = "productQuantity">${ products[key].quantity }</p>
             <p><a class ="returnProduct" name = "${ products[key].name }" href="./product.html?product=${ products[key].name }&restart=true" >変更する</a></p>
-            <p>取消</p>
+            <p><a class="removeProduct" name="${ key }" href="">取消</a></p>
 				</div>`);
 
 
 			}
-
-
-
 }
 	$('.returnProduct').click((event) => {
 		let productId = event.target.name.trim();
@@ -88,8 +85,16 @@
 		//products[productId].quantity = 0;
 		localStorage.setItem(userName+ "_price", JSON.stringify(price));
 		localStorage.setItem(userName + "_products", JSON.stringify(products));
+    })
 
-		})
+    $('.removeProduct').click(function (event) {
+      let name = $(this).attr("name");
+      delete products[name];
+      localStorage.setItem(userName + "_products", JSON.stringify(products));
+    //   delete products      
+		// localStorage.removeItem(userName + '')
+    })
+
 </script>
 
 

@@ -129,10 +129,12 @@ console.log("hello")
    <div class="index-main-tables">
     {% for product in products %}
    <div class="index-table">
+      <a href="{% url 'product' %}?product={{ product.product }}">
       <img src="{{ product.picture }}">
       <br>
-      <a href="{% url 'product' %}?product={{ product.product }}">{{ product.product }}</a><br>
+      {{ product.product }}<br>
       <span>{{ product.price }}円</span><br>
+      </a>
    </div>
     {% endfor %}
    </div>
