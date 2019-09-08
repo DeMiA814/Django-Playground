@@ -209,12 +209,7 @@ body.pay-body {
   transform: translateY(150px);
   opacity:0;
 }
-.footer_buttnos{
-    position: fixed;
-    bottom: 155px;
-    left: 0;
-    width: 100%;
-}
+
 ul{
   padding:0;
 }
@@ -248,33 +243,6 @@ a.cart_button {
     background: rgba(217, 225, 233, 0.9);
     margin-bottom: -139px;
     transition: all 0.3s;
-}
-.icon_button_upper{
-    height: 10px;
-    background: black;
-    width: 75px;
-    margin-left: 22px;
-    margin-top: 32px;
-    transition: all 0.3s;
-}
-.icon_button_under{
-    height: 10px;
-    background: black;
-    width: 75px;
-    margin-left: 22px;
-    margin-top: 35px;
-    transition: all 0.3s;
-}
-.icon_wallet_op{
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    margin-right: 4%;
-    text-align: center;
-    margin-left: 80%;
-    border: 3px solid black;
-    border-radius: 50%;
-    bottom: -115px;
 }
 .dis_no{
   display: none;
@@ -480,8 +448,16 @@ button:hover{
  }
 
 /* index0 */
-a.login_button {
-    float: left;
+.footer_buttnos{
+  position: fixed;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+  display: inline-flex;
+}
+  
+  a.login_button {
+    /* float: left; */
     width: 35%;
     text-align: center;
     font-size: 40px;
@@ -491,11 +467,13 @@ a.login_button {
     background: rgba(217, 225, 233, 0.9);
     position: absolute;
     border-radius: 100px;
-    margin-left: 40%;
+    margin-left: 40%; 
     transition: all 0.5s;
+    /* position: fixed; */
+    display: inline-block;
 }
 a.member_button {
-    float: left;
+    /* float: left; */
     width: 35%;
     text-align: center;
     font-size: 40px;
@@ -504,10 +482,48 @@ a.member_button {
     border-radius: 100px;
     color: #1641c6;
     background: rgba(217, 225, 233, 0.9);
-    margin-bottom: -139px;
+    /* margin-bottom: -139px; */
     transition: all 0.3s;
+    display: inline-block;
 }
-input[type="submit" i]{
+ input[type="submit" i]{
   padding: 20px 0;
-  font-size: 30px;
+  /* width: 35%; */
+  text-align: center;
+  font-size: 40px;
+  /* padding: 1% 0; */
+  text-decoration: none;
+  /* border-radius: 100px; */
+  color: #1641c6;
+  background: rgba(217, 225, 233, -0.1); 
+  border: solid 0px;
+}   
+.icon_button_upper{
+  height: 10px;
+  background:white;
+  width: 75px;
+  margin-left: 22px;
+  margin-top: 32px;
+  transition: all 0.3s;
+}
+.icon_button_under{
+  height: 10px;
+  background: white;
+  width: 75px;
+  margin-left: 22px;
+  margin-top: 35px;
+  transition: all 0.3s;
+}
+.icon_wallet_op{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  margin-right: 4%;
+  text-align: center;
+  /* margin-left: 80%; */
+  border: 3px solid white;
+  border-radius: 50%;
+  /* bottom: -115px; */
+  display: inline-block;
+  margin-left: 47%;
 }

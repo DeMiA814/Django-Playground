@@ -138,19 +138,8 @@ console.log("hello")
    </div>
    <footer>
      <div class="footer_buttnos">
-     <!-- <div class="login_pop" id="logpop">
-       <h1>
-        <Strong>{{request.user.username}}</Strong>でログイン中
-       </h1>
-       <h2>
-         ログアウトは<a href="logout/">こちら</a>から
-       </h2>
-     </div> -->
-     <!-- <ul> -->
-       <!-- <a href="{% url 'pay' %}" class="member_button" id="member"><li>会員登録</li></a> -->
        <a href='signup/'  id="member" class="member_button">
          <input type="submit" name="button_2"value="会員登録"></a>
-       <!-- <a href="{% url 'payf' %}" class="login_button" id="login"><li>ログイン</li></a> -->
        <a href='login/' id="login" class="login_button">
          <input type="submit" name="button_2"value="ログイン"></a>
        <div onclick="wallet()">
@@ -159,9 +148,8 @@ console.log("hello")
                <div class="icon_button_under btn_un_act" id="button_under"></div>
             </div>
        </div>
-     <!-- </ul> -->
-   </div>
- </footer>
+     </div>
+   </footer>
  <script>
  // var login_pop = document.getElementById('logpop');
  var wallet_op = document.getElementById('button_upper');
