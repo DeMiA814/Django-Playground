@@ -183,8 +183,8 @@ else{
   member.classList.remove('dis_no');
   login.classList.remove('active');
   member.classList.remove('active');
-  login.setAttribute("href","{% url 'payf' %}");
-  member.setAttribute("href","{% url 'pay' %}");
+  login.setAttribute("href","{% url 'login' %}");
+  member.setAttribute("href","{% url 'signup' %}");
 }
 };
  </script>
