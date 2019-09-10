@@ -120,7 +120,7 @@ input[type="submit"] {
   display: block;
   text-align: center;
   font-size: 33px;
-  padding: 0.5em 1em;
+  /* padding: 0.5em 1em; */
   text-decoration: none;
   background: #668ad8;
   color: #FFF;
@@ -206,7 +206,7 @@ body.pay-body {
 .pay-money{font-size: 50px;}
 .pay-below{clear:both;}
 .pay-kessai{width:344px !important;margin-left:10% !important;margin-bottom: 10px !important;}
-.pay-to-index{width:300px !important;margin: 10px 0px 50px 10% !important;}
+.pay-to-index{width:344px !important;margin: 10px 0px 50px 10% !important;}
 
 /*top footer*/
 .active{
