@@ -150,6 +150,16 @@ def pay(request):
             #messages.add_message(request, messages.INFO, 'Please login to buy form us.')
         return render(request, 'ecom/pay1.html')
 
+def cancel(request, product):
+    if request.user.is_authenticated:
+        username = request.user.username
+        person = Person.objects.get(name=username)
+        cart = get_cart(request)
+        #item_in_cart = Item.objects.exclude(in_cart=0)
+        item = Item.objects.get(product=product)
+        item.in_cart = 0
+        item.save()
+        return redirect('pay')
 
 #----------------
 

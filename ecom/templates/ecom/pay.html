@@ -69,9 +69,9 @@
 				$('.paymentDetails').append(`<div class="pay-content">
 				<img class="pay-img"  src="${ products[key].imgSrc }">
     				<p class = "productName">${ products[key].name }</p>
-    				<p class = "productQuantity">${ products[key].quantity }</p>
+    				<p class = "productQuantity">個数：${ products[key].quantity }</p>
             <p><a class ="returnProduct" name = "${ products[key].name }" href="./product.html?product=${ products[key].name }&restart=true" >変更する</a></p>
-            <p><a class="removeProduct" name="${ key }" href="">取消</a></p>
+            <p><a class="removeProduct" name="${ key }" href="./cancel/${key}">取消</a></p>
 				</div>`);
 
 
@@ -91,8 +91,6 @@
       let name = $(this).attr("name");
       delete products[name];
       localStorage.setItem(userName + "_products", JSON.stringify(products));
-    //   delete products      
-		// localStorage.removeItem(userName + '')
     })
 
 </script>

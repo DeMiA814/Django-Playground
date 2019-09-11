@@ -22,13 +22,6 @@
 	.idPassword {
 	margin-left: 5%
 	}
-	ul {
-
-	margin-left: 43%;
-        text-align:left;
-	}
-
-
 	 .taba { margin-left: 28%; }
 }
 
@@ -47,9 +40,11 @@
 	margin-left: 5%
 	}
 	ul {
-
 	margin-left: 43%;
         text-align:left;
+	}
+	li{
+		display: contents !important; 
 	}
 	.taba { margin-left: 28%; }
   
@@ -62,7 +57,7 @@
  <form method="post">
 
    {% csrf_token %}
-
+<div class="login_content">
      <p><label for="id_username">ユーザー名:</label>
  <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username";style="float:left">
 <br>
@@ -73,13 +68,14 @@
 <ul ><li>以下の点に注意して下さい.</li><li>個人情報に関連の無いものであること.</li><li>8文字以上であること。</li><li>よく使われるパスワード(passwordなど)でないこと.</li><li>英文字を含むこと。</li></ul>
 
  </span>
+ 
 <p class ="idPassword"><label for="id_password2">パスワード再入力:</label> <input type="password" name="password2" required="" id="id_password2">
 <br></p>
 
 <p class="taba"> 確認のため、再びパスワードを入力してください</p>    <button type="submit">登録</button>
  </form>
 
-
+</div>
 
 
 {%endblock%}
