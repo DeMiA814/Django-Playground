@@ -208,6 +208,10 @@ def signup(request):
             login(request, user)
 
             return redirect('index')
+        else:
+            return render(request,'signup1.html',{'form': form})
+            print('fail')
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    
+        return render(request, 'signup.html', {'form': form})

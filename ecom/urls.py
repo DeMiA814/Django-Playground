@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
+#from django.conf.urls import url
 from . import views as ecom_views
 from django.views.generic.base import TemplateView # new
 
@@ -14,7 +14,8 @@ urlpatterns = [
     #path('login',views.login, name="login"),
     path('product.html', views.product, name="product"),
     path('', include('django.contrib.auth.urls')),
-    url('signup', ecom_views.signup, name='signup'),
+    path('signup', ecom_views.signup, name='signup'),
+    path('signup1.html', ecom_views.signup, name='signup1'),
     path('pay.html', views.pay, name="pay"),
     path('history.html', views.history, name="history"),
     path('cancel/<product>', views.cancel, name='cancel')

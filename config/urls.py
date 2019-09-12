@@ -29,4 +29,5 @@ urlpatterns = [
     path('ecom/', include('ecom.urls')),
     path('ecom/payf.html', include('payments.urls')),
     url('', include('pwa.urls')),
+    path('ecom/', include('django.contrib.auth.urls')), 
 ]
