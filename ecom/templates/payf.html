@@ -15,7 +15,16 @@
 	};
 	$('.price').text(price+'円');
 
-	
+	function check(){
+		if(price == 0){
+				alert('何かご購入ください');
+				return false;
+		}
+	    else{
+                return true;
+		}
+
+	}
 
 </script>
 
@@ -38,7 +47,7 @@
         document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
     </script>
 
-<input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" value="決済">
+<input type="submit" id = "paymentComplete" name="button_2" class="btn-square-shadow pay-kessai" onclick='return check()' value="決済">
 
 <br> <a href="/ecom/" class="btn-square-shadow pay-to-index">まだ買い物を続ける</a>
 
